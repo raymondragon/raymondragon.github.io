@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Rclone&#43;Caddy直连谷歌网盘在线播放 | Streaming via web pages > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a12_rclone/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a12_rclone/">Rclone+Caddy直连谷歌网盘在线播放 | Streaming via web pages</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-09-21 | 
+        </span>
+      
+      <span> &#11585; 字数 1978 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A12/A1200.jpg" class="post-cover" alt="img/A12/A1200.jpg"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>nPlayer可以直接添加谷歌网盘在线串流播放，但是需要科学上网，本教程通过rclone将Google drive挂载在谷歌云服务器，然后用Caddy的browse插件发布成文件列表，然后就可用nPlayer自带浏览器实现免科学上网在线播放。</p>
+<p>You can add google drive directly into nplayer, which is sometime inconvenient. So the alternative plan is to use browser inside nplayer to stream, while webpages come from Caddy and rclone.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">安装Rclone | Install Rclone</a></li>
+<li><a href="#2">配置Rclone | Rclone config</a></li>
+<li><a href="#3">挂载Gdrive | Mount Gdrive</a></li>
+<li><a href="#4">配置Caddy | Caddy config</a></li>
+<li><a href="#5">在线播放 | Stream online</a></li>
+<li><a href="#6">参考指南 | User Guide</a></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="span-id1-rclone--install-rclonespan"><!-- raw HTML omitted --># 安装Rclone | Install Rclone<!-- raw HTML omitted --></h3>
+<ul>
+<li>首先直接输入官方安装命令一键安装Rclone：</li>
+<li>To install rclone on Linux/macOS/BSD systems, run:</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://rclone.org/install.sh | sudo bash
+</code></pre></div><ul>
+<li>另外还需要安装fuse用来挂载目录，否者会提示<code>executable file not found</code>。</li>
+<li>In order to avoid error <code>executable file not found</code>, install fuse btw.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Debian/Ubuntu</span>
+apt-get install fuse
+<span style="color:#75715e"># CentOS</span>
+yum install fuse
+</code></pre></div><blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A04/A0400.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<hr>
+<h3 id="span-id2-rclone--rclone-configspan"><!-- raw HTML omitted --># 配置Rclone | Rclone config<!-- raw HTML omitted --></h3>
+<ul>
+<li>输入<code>rclone config</code>开始初始化配置。</li>
+<li>Type <code>rclone config</code> to initiate rclone configeration.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">n<span style="color:#f92672">)</span> New remote
+s<span style="color:#f92672">)</span> Set configuration password
+q<span style="color:#f92672">)</span> Quit config
+n/s/q&gt; n  <span style="color:#75715e">#新建 | new remote</span>
+name&gt; gdrive  <span style="color:#75715e">#配置名称 | new name</span>
+Type of storage to configure.
+Enter a string value. Press Enter <span style="color:#66d9ef">for</span> the default <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span>.
+Choose a number from below, or type in your own value
+...
+<span style="color:#ae81ff">12</span> / Google Drive
+   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive&#34;</span>
+...
+Storage&gt; <span style="color:#ae81ff">12</span>  <span style="color:#75715e">#选择12 Google Drive | choose 12</span> 
+Google Application Client Id - leave blank normally.
+client_id&gt;  <span style="color:#75715e">#留空 | leave blank</span>
+Google Application Client Secret - leave blank normally.
+client_secret&gt;  <span style="color:#75715e">#留空 | leave blank</span>
+Service Account Credentials JSON file path - needed only <span style="color:#66d9ef">if</span> you want use SA instead of interactive login.
+service_account_file&gt;  <span style="color:#75715e">#留空 | leave blank</span>
+Choose a number from below, or type in your own value
+ <span style="color:#ae81ff">1</span> / Full access all files, excluding Application Data Folder.
+   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive&#34;</span>
+ <span style="color:#ae81ff">2</span> / Read-only access to file metadata and file contents.
+   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive.readonly&#34;</span>
+   / Access to files created by rclone only.
+ <span style="color:#ae81ff">3</span> | These are visible in the drive website.
+   | File authorization is revoked when the user deauthorizes the app.
+   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive.file&#34;</span>
+   / Allows read and write access to the Application Data folder.
+ <span style="color:#ae81ff">4</span> | This is not visible in the drive website.
+   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive.appfolder&#34;</span>
+   / Allows read-only access to file metadata but
+ <span style="color:#ae81ff">5</span> | does not allow any access to read or download file content.
+   <span style="color:#ae81ff">\ </span><span style="color:#e6db74">&#34;drive.metadata.readonly&#34;</span>
+scope&gt; <span style="color:#ae81ff">1</span> <span style="color:#75715e">#选择1 读写权限 | choose 1 full access</span>
+ID of the root folder
+Leave blank normally.
+Fill in to access <span style="color:#e6db74">&#34;Computers&#34;</span> folders. <span style="color:#f92672">(</span>see docs<span style="color:#f92672">)</span>.
+Enter a string value. Press Enter <span style="color:#66d9ef">for</span> the default <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span>.
+root_folder_id&gt;  <span style="color:#75715e">#留空 | leave blank</span>
+Service Account Credentials JSON file path 
+Leave blank normally.
+Needed only <span style="color:#66d9ef">if</span> you want use SA instead of interactive login.
+Enter a string value. Press Enter <span style="color:#66d9ef">for</span> the default <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span>.
+service_account_file&gt;  <span style="color:#75715e">#留空 | leave blank</span>
+Edit advanced config? <span style="color:#f92672">(</span>y/n<span style="color:#f92672">)</span>
+y<span style="color:#f92672">)</span> Yes
+n<span style="color:#f92672">)</span> No
+y/n&gt; n  <span style="color:#75715e">#输入n | chooose n</span>
+Remote config
+Use auto config?
+ * Say Y <span style="color:#66d9ef">if</span> not sure
+ * Say N <span style="color:#66d9ef">if</span> you are working on a remote or headless machine
+y<span style="color:#f92672">)</span> Yes
+n<span style="color:#f92672">)</span> No
+y/n&gt; n  <span style="color:#75715e">#输入n | chooose n</span>
+If your browser does not open automatically go to the following link: https://accounts.google.com/o/...  <span style="color:#75715e">#复制该地址登陆谷歌网盘授权 | copy url, login google drive and auth</span>
+Log in and authorize rclone <span style="color:#66d9ef">for</span> access
+Enter verification code&gt;******  <span style="color:#75715e">#输入获取到的code | paste auth code</span>
+Configure this as a team drive?
+y<span style="color:#f92672">)</span> Yes
+n<span style="color:#f92672">)</span> No
+y/n&gt; n  <span style="color:#75715e">#输入n | chooose n</span>
+--------------------
+<span style="color:#f92672">[</span>Rats<span style="color:#f92672">]</span>
+type <span style="color:#f92672">=</span> drive
+client_id <span style="color:#f92672">=</span> ******
+client_secret <span style="color:#f92672">=</span> ******
+scope <span style="color:#f92672">=</span> drive
+token <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;access_token&#34;</span>:<span style="color:#e6db74">&#34;******&#34;</span><span style="color:#f92672">}</span>
+--------------------
+y<span style="color:#f92672">)</span> Yes this is OK
+e<span style="color:#f92672">)</span> Edit this remote
+d<span style="color:#f92672">)</span> Delete this remote
+y/e/d&gt; y  <span style="color:#75715e">#输入y | choose y</span>
+Current remotes:
+
+Name                 Type
+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>                 <span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+gdrive               drive
+
+e<span style="color:#f92672">)</span> Edit existing remote
+n<span style="color:#f92672">)</span> New remote
+d<span style="color:#f92672">)</span> Delete remote
+r<span style="color:#f92672">)</span> Rename remote
+c<span style="color:#f92672">)</span> Copy remote
+s<span style="color:#f92672">)</span> Set configuration password
+q<span style="color:#f92672">)</span> Quit config
+e/n/d/r/c/s/q&gt; q  <span style="color:#75715e">#输入q保存退出 | choose q to exit</span>
+</code></pre></div><hr>
+<h3 id="span-id3-gdrive--mount-gdrivespan"><!-- raw HTML omitted --># 挂载Gdrive | Mount Gdrive<!-- raw HTML omitted --></h3>
+<ul>
+<li>首先登陆Filebrowser，选择一个挂载点，新建一个空目录例如<code>home/gdrive</code>.</li>
+<li>Login filebrowser firstly, make an empty folder to mount, eg. <code>home/gdrive</code>.</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>输入如下指令将<code>gdrive</code>挂载到本地目录<code>home/gdrive</code>.</li>
+<li>Type in the following command to mount <code>gdrive</code> to the local folder <code>home/gdrive</code>.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone mount gdrive: /home/gdrive --daemon
+</code></pre></div><ul>
+<li>挂载完毕后即可在后台运行，输入<code>df -h</code>检查一下，注意最底下显示<code>gdrive</code>表示挂载成功。</li>
+<li>After the mount is complete, you can run it in the background. Enter <code>df -h</code> to check it. Note that <code>gdrive</code> is displayed at the bottom to indicate that mount is successful.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@prime-2:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            281M     <span style="color:#ae81ff">0</span>  281M   0% /dev
+tmpfs            59M  7.7M   51M  14% /run
+/dev/sda1        20G  2.8G   16G  15% /
+tmpfs           293M     <span style="color:#ae81ff">0</span>  293M   0% /dev/shm
+tmpfs           5.0M     <span style="color:#ae81ff">0</span>  5.0M   0% /run/lock
+tmpfs           293M     <span style="color:#ae81ff">0</span>  293M   0% /sys/fs/cgroup
+gdrive          1.0P  1.4T  1.0P   1% /home/gdrive
+</code></pre></div><hr>
+<h3 id="span-id4-caddy--caddy-configspan"><!-- raw HTML omitted --># 配置Caddy | Caddy config<!-- raw HTML omitted --></h3>
+<ul>
+<li>接下来修改caddyfile配置文件，把刚才挂载的目录发布成网页。</li>
+<li>Next, modify the caddyfile and publish the directory you just mounted as a web page.</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A08/A0800.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>需要用到<code>browse</code>指令。</li>
+<li><code>browse</code> is used.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">指令Directives</th>
+<th align="center">说明Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">browse</td>
+<td align="center">在指定的基本路径内进行目录浏览 enables directory browsing</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>在Caddyfile中添加如下配置，域名或端口均可。</li>
+<li>Add the following config in caddyfile, using domain name or port.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://drive.marsgrid.com <span style="color:#f92672">{</span>
+ root /home/gdrive
+ browse
+<span style="color:#f92672">}</span>
+
+或 | or
+
+:3092 <span style="color:#f92672">{</span>
+ root /home/gdrive
+ browse
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>注意不要<code>gzip</code>压缩，不要<code>tls</code>加密，在线看视频不需要这些影响速度，同时引起发热的步骤，简单点挺好。</li>
+<li>Be careful not use <code>gzip</code> to compress, and don't use <code>tls</code> to encrypt in order to make it simlple while streaming.</li>
+</ul>
+<hr>
+<h3 id="span-id5---stream-onlinespan"><!-- raw HTML omitted --># 在线播放 | Stream online<!-- raw HTML omitted --></h3>
+<ul>
+<li>打开nPlayer内置的浏览器输入刚才配置的域名或者IP+端口号即可完成在线播放。</li>
+<li>Open nPlayer's built-in browser and enter the domain name or IP+ port number you just configured to complete streaming.</li>
+</ul>
+
+  <img src="/img/A12/A1201.png"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id6---user-guidespan"><!-- raw HTML omitted --># 参考指南 | User Guide<!-- raw HTML omitted --></h3>
+<ul>
+<li>Rclone常用命令参考。</li>
+<li>Useful rclone commands.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone config - 以控制会话的形式添加rclone的配置，配置保存在.rclone.conf文件中。
+rclone copy - 将文件从源复制到目的地址，跳过已复制完成的。
+rclone sync - 将源数据同步到目的地址，只更新目的地址的数据。
+rclone move - 将源数据移动到目的地址。
+rclone delete - 删除指定路径下的文件内容。
+rclone purge - 清空指定路径下所有文件数据。
+rclone mkdir - 创建一个新目录。
+rclone rmdir - 删除空目录。
+rclone check - 检查源和目的地址数据是否匹配。
+rclone ls - 列出指定路径下所有的文件以及文件大小和路径。
+rclone lsd - 列出指定路径下所有的目录/容器/桶。
+rclone lsl - 列出指定路径下所有文件以及修改时间、文件大小和路径。
+rclone md5sum - 为指定路径下的所有文件产生一个md5sum文件。
+rclone sha1sum - 为指定路径下的所有文件产生一个sha1sum文件。
+rclone size - 获取指定路径下，文件内容的总大小。.
+rclone version - 查看当前版本。
+rclone cleanup - 清空remote。
+rclone dedupe - 交互式查找重复文件，进行删除/重命名操作。
+</code></pre></div><ul>
+<li>如果你想了解更多Rclone的使用方法，可以访问下方的官方指南。</li>
+<li>If you want to learn more about how to use rclone, you can visit the official guide below.</li>
+</ul>
+<blockquote>
+<p><a href="https://rclone.org/docs/">Rclone docs：https://rclone.org/docs/</a></p>
+</blockquote>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a12_rclone/">Rclone&#43;Caddy直连谷歌网盘在线播放 | Streaming via web pages</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

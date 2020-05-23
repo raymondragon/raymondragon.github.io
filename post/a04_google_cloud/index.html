@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>谷歌云VPS入门指南 | Getting started with Google Cloud VPS > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a04_google_cloud/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a04_google_cloud/">谷歌云VPS入门指南 | Getting started with Google Cloud VPS</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-08-14 | 
+        </span>
+      
+      <span> &#11585; 字数 1918 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A04/A0400.jpg" class="post-cover" alt="img/A04/A0400.jpg"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>拥有用一台云服务器可以让我们做很多有趣的事情，比如创建个人博客，搭建科学上网服务，搞搞离线下载，私人云盘，内网穿透等等。VPS建在哪里好呢，本博主推荐谷歌云，
+只要一张外币信用卡即可搞定，注册完毕后谷歌云提供给你一年免费的300美金赠金，可以免费试用其中的各种功能，到期后还可继续选择试用，听起来是不是赞爆。
+那么这期教程就来聊聊搭建谷歌云VPS的过程及注意事项。</p>
+<p>A cloud server allows us to do lots of interesting things, like build a website, run a personal blog, etc. It is recommended creating your VPS on
+Google cloud, free trial for $300 on 1 year, and fully renewable. So let's get started.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><!-- raw HTML omitted -->前期准备 | Preparations<!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->配置防火墙 | Firewall config<!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->创建VM示例 | New instance<!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->IP地址筛选 | Select IP address<!-- raw HTML omitted --></li>
+<li><!-- raw HTML omitted -->SSH登录 | SSH login<!-- raw HTML omitted --></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="div-id1---preparationsdiv"><!-- raw HTML omitted --># 前期准备 | Preparations<!-- raw HTML omitted --></h3>
+<ul>
+<li>你需要一个注册好赠金的谷歌云账号。</li>
+<li>A Google Cloud account that is registered with a $300 bonus is required.</li>
+</ul>
+
+  <img src="/img/A04/A0401.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="div-id2---firewall-configdiv"><!-- raw HTML omitted --># 配置防火墙 | Firewall config<!-- raw HTML omitted --></h3>
+<ul>
+<li>实例创建前首先需要配置防火墙，通过<code>VPC网络</code>菜单进入<code>防火墙规则</code>页面，点击<code>创建防火墙规则</code>。</li>
+<li>Firstly let's go to filewall settings. Select <code>VPC Network</code>, then <code>Firewall rules</code>, then <code>Add rule</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0402.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>名称随便起，流量方向选<code>入站</code>，然后对匹配项执行的操作选<code>允许</code>，其他参数保持默认。</li>
+<li>Pickup a name u like, then choose <code>ingress</code>, <code>permit</code>, other settings remain default.</li>
+</ul>
+
+  <img src="/img/A04/A0403.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>接下来，来源IP地址范围，填入<code>0.0.0.0/0</code>，不要遗漏后面的0，协议和端口选<code>全部允许</code>，其他参数保持默认，点击<code>创建</code>。</li>
+<li>Input <code>0.0.0.0/0</code> in Source IP address, and choose <code>All allowed</code> in Protocol and port, other settings remain default, then <code>Create</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0404.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>创建完成后，可以回到<code>防火墙规则</code>页面，把其他默认的规则都删掉，因为这些规则都会被我们创建的这个新规则覆盖掉，而且谷歌云内置默认的全部允许出站流量，不需要再创建出站规则。</li>
+<li>After the creation is complete, you can go back to the <code>Firewall Rules</code> page and delete the other default rules, because these rules will be overwritten by the new rule we created, and Google Cloud has a built-in rule to allow all egress flow, so where is no need to create one.</li>
+</ul>
+<hr>
+<h3 id="div-id3-vm--new-instancediv"><!-- raw HTML omitted --># 创建VM示例 | New instance<!-- raw HTML omitted --></h3>
+<ul>
+<li>点击<code>Compute Engin</code>，选择<code>VM实例</code>，然后点击<code>创建实例</code>。</li>
+<li>Select <code>Compute Engin</code>, then <code>VM Instances</code>, and <code>Create</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0405.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>名称随便填，区域的话选台湾最快，地区随便选，机型的话选<code>f1-micro</code>就够用了。</li>
+<li>Pick an instance name, and region based on your location. And a <code>f1-micro</code> is enough for use.</li>
+</ul>
+
+  <img src="/img/A04/A0406.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>然后剩下的设置都不需要改动，保持默认即可，最后点击<code>创建</code>。</li>
+<li>Other settings remain default, then click <code>Create</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0407.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="div-id4-ip--select-ip-addressdiv"><!-- raw HTML omitted --># IP地址筛选 | Select IP address<!-- raw HTML omitted --></h3>
+<ul>
+<li>创建完成的实例默认会分配一个动态IP地址，那这个IP速度怎样呢，还需要进行测试。</li>
+<li>一般情况下谷歌云分配的地址都是新的，但也有二手的，而且有很大几率是被墙的或者ping很高的劣质IP。</li>
+<li>The instance we created will be assigned a dynamic IP address by default, and it needs to be tested.</li>
+<li>There are also second-handed IP address, and there is a high probability that it is a poor quality IP that is gfwalled or the ping value is very high.</li>
+</ul>
+
+  <img src="/img/A04/A0408.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>把刚才创建的实例的外部IP地址拷贝下来，然后打开这个网站 <a href="https://tools.ipip.net/newping.php">ipip.net Ping查询</a> Ping一下。</li>
+<li>Just copy the IP address, and test it here: <a href="https://tools.ipip.net/newping.php">ipip.net Ping inquiry</a>.</li>
+</ul>
+
+  <img src="/img/A04/A0409.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>选中实例，点击<code>停止</code>，再<code>启动</code>，即可刷新动态IP地址，可以多试几次，直到选中满意的为止。</li>
+<li>选好IP地址后，需要把这个动态IP改为静态IP，以免实例重启后IP地址发生变化。</li>
+<li>通过<code>VPC网络</code>菜单进入<code>外部IP地址</code>页面，点击<code>类型</code>列中的<code>临时</code>，把它改为<code>静态</code>，名字可以随便写，最后点<code>保留</code>即可。</li>
+<li>Select the instance, click <code>Stop</code>, then <code>Start</code>, to refresh IP address, you can try several times until you find the best one.</li>
+<li>After selecting an IP address, you need to change this dynamic IP to a static IP to prevent the IP address from changing after the instance is restarted.</li>
+<li>Go to the <code>External IP Address</code> page of the <code>VPC Network</code> menu, click <code>Temporary</code> in the <code>Type</code> column, change it to <code>Static</code>, pick a name u like, and finally <code>Reserve</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0410.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="div-id5-ssh--ssh-logindiv"><!-- raw HTML omitted --># SSH登录 | SSH login<!-- raw HTML omitted --></h3>
+<ul>
+<li>如果想在电脑上通过SSH登录刚才创建的VPS，直接在<code>VM实例</code>中点击<code>SSH链接</code>即可。</li>
+<li>Just click <code>SSH link</code> in the <code>VM instance</code> page, if u want to ssh your vps on PC.</li>
+</ul>
+
+  <img src="/img/A04/A0411.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>如果通过手机登录，则需要提前进行密钥设置。这里以ssh神器 <a href="https://termius.com/">Termius</a> 为例。</li>
+<li>If u are using mobile phone to ssh your VPS, u should config the keys in advance. Let's take <a href="https://termius.com/">Termius</a> for example.</li>
+</ul>
+
+  <img src="/img/A04/A0412.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>在app store直接下载<code>Termius</code>安装，然后选择<code>Hosts</code>，点击右上角<code>+</code>，选择<code>New Host</code>。</li>
+<li>Download <code>Termius</code> directly from the app store, then select <code>Hosts</code>, click on the top right corner of <code>+</code> and select <code>New Host</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0413.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li><code>Alias</code>随便填，<code>Hostname</code>填写刚才生成的静态IP地址，之后打开<code>Use SSH</code>。</li>
+<li>Pick a neme in <code>Alias</code>, fill the static IP address just generated in <code>Hostname</code>, then open <code>Use SSH</code> trigger.</li>
+</ul>
+
+  <img src="/img/A04/A0414.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>进入<code>Key</code>页面，然后选择<code>Generate Key</code>生成一对新的密钥，最后点击<code>Save</code>保存。</li>
+<li>Go to the <code>Key</code> page and select <code>Generate Key</code> to generate a new pair of keys, then press <code>Save</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0415.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>接下来需要将生成的新的密钥中的公钥复制下来，上传到谷歌云上。进入<code>Keychain</code>页面，点击key图标，选择上面第二个编辑按钮。</li>
+<li>Next, you need to copy the public key and upload it to Google Cloud. Go to the <code>Keychain</code> page, click the key icon and select the second button above.</li>
+</ul>
+
+  <img src="/img/A04/A0416.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>往下翻，然后把<code>Public</code>里的内容全复制下来。</li>
+<li>Scroll down and copy the contents in <code>Public</code>.</li>
+</ul>
+
+  <img src="/img/A04/A0417.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>回到谷歌云，<code>VM实例</code>页面中点击VPS的名字进入详情页，随后点上面的<code>修改</code>。</li>
+<li>Go back to Google Cloud, click on the VPS name in the <code>VM Instances</code> page to go to the details page, then click on <code>Modify</code> above.</li>
+</ul>
+
+  <img src="/img/A04/A0418.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>往下翻，找到<code>SSH密钥</code>，点击<code>添加一项</code>，然后把刚才复制的公钥粘贴进去。</li>
+<li>接下来这一步很重要：需要把<code>Generated by Terminus</code>这句删掉，替换成你谷歌账号的名字也就是<code>XXX@gmail.com</code>里的<code>XXX</code>，最后点<code>更新</code>。</li>
+<li>Scroll down, find the <code>SSH key</code>, click on &lsquo;Add one&rsquo;, and paste the public key you just copied.</li>
+<li>This next step is very important: you need to delete the <code>Generated by Terminus</code> sentence, replace it with the name of your Google account, which is <code>XXX</code> in <a href="mailto:%60XXX@gmail.com">`XXX@gmail.com</a><code>, and finally </code>Update`.</li>
+</ul>
+
+  <img src="/img/A04/A0419.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>最后回到手机上，在<code>Hosts</code>中直接点击刚才添加的VPS，就可以实现SSH登录啦。</li>
+<li>Finally, go back to your phone and click the VPS you just added in <code>Hosts</code> to initiate SSH login.</li>
+</ul>
+
+  <img src="/img/A04/A0420.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a04_google_cloud/">谷歌云VPS入门指南 | Getting started with Google Cloud VPS</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

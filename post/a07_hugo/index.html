@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>用Hugo生成静态博客 | Generate your static blog using Hugo > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a07_hugo/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a07_hugo/">用Hugo生成静态博客 | Generate your static blog using Hugo</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-09-01 | 
+        </span>
+      
+      <span> &#11585; 字数 1822 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A07/A0700.jpg" class="post-cover" alt="img/A07/A0700.jpg"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署，非常适合用来生成数据量不大的静态博客。
+本篇教程介绍怎样用Hugo生成静态网页的，并配合Filebrowser完成文章编写，图片管理，主题修改等操作。</p>
+<p>Hugo is a static website generator implemented by Go lang. It's simple, easy to use, efficient, easy to extend, and fast to deploy. Which is great for generating static blogs.
+This tutorial describes how to use Hugo to generate static web pages, and with Filebrowser to complete article writing, image management, theme modification and other operations.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">下载安装 | Download and install</a></li>
+<li><a href="#2">新建站点 | Creat new site</a></li>
+<li><a href="#3">安装主题 | Theme installation</a></li>
+<li><a href="#4">添加内容 | Add contents</a></li>
+<li><a href="#5">生成网页 | Genetare pages</a></li>
+<li><a href="#6">个性化主题 | Customization</a></li>
+<li><a href="#7">发布网站 | Publish website</a></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="span-id1---download-and-installspan"><!-- raw HTML omitted --># 下载安装 | Download and install<!-- raw HTML omitted --></h3>
+<ul>
+<li>Hugo本身就是一个二进制文件，并不需要任何依赖，直接在官方Github上下载最新的文件后解压即可运行。</li>
+<li>Hugo is a binary file, it does not require any dependencies, and can be downloaded on the official Github page.</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/gohugoio/hugo/releases">Releases · gohugoio/hugo · GitHub</a></p>
+</blockquote>
+<ul>
+<li>直接下载相应版本（以Debian为例下载<code>hugo_0.57.2_Linux-64bit.tar.gz</code>），通过Filebrowser下载<code>hugo</code>文件到<code>/usr/local/bin</code>目录。</li>
+<li>Download the corresponding version directly (using Debian for example:  <code>hugo_0.57.2_Linux-64bit.tar.gz</code>), unzip the <code>hugo</code> file and put it into the <code>/usr/local/bin</code> directory using Filebrowser.</li>
+</ul>
+
+  <img src="/img/A07/A0701.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A04/A0400.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<hr>
+<h3 id="span-id2---creat-new-sitespan"><!-- raw HTML omitted --># 新建站点 | Creat new site<!-- raw HTML omitted --></h3>
+<ul>
+<li>首先需要用Hugo在你选定的目录下新建站点。目录任意选择，例如选定<code>root/mysites</code>作为网站的根目录，以<code>newblog</code>作为网站的，先在Filebrowser里新建<code>newsite</code>目录，然后在SSH下输入如下命令：</li>
+<li>First you need to use Hugo to create a new site in your chosen directory. Select any directory, for example, select <code>root/mysites</code> as the root directory of the website and <code>newblog</code> as the name of your site. Firstly create a new <code>newsite</code> directory in Filebrowser, then enter the following command in SSH:</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -i
+cd mysites
+hugo new site newblog
+</code></pre></div>
+  <img src="/img/A07/A0703.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id3---theme-installationspan"><!-- raw HTML omitted --># 安装主题 | Theme installation<!-- raw HTML omitted --></h3>
+<ul>
+<li>接下来从官网主题页面选择喜欢的主题：<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+<li>Next, select the theme you like from the official website theme page: <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a></li>
+</ul>
+
+  <img src="/img/A07/A0704.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>以这个主题为例：<code>https://themes.gohugo.io/hugo-theme-massively/</code>，第一种安装主题的方法是点<code>Download</code>按钮，转到Github直接到<code>Releases</code>下载压缩包，解压到<code>/root/mysites/newblog/themes</code>目录下。</li>
+<li>Take this theme as an example: <code>https://themes.gohugo.io/hugo-theme-massively/</code>, the first way to install the theme is to click the <code>Download</code> button, go to Github and go directly to <code>Releases</code> to download the archive. Unzip it into the <code>/root/mysites/newblog/themes</code> directory.</li>
+</ul>
+
+  <img src="/img/A07/A0705.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>另一种方法，也适合没有压缩包的主题安装，即使用<code>git</code>命令安装主题，如果没有安装<code>git</code>命令，通过一条指令<code>sudo apt-get install git</code>即可安装。</li>
+<li>安装好<code>git</code>后，进入<code>/root/mysites/newblog/themes</code>目录，把刚才主题页面<code>Download</code>按钮的链接右键保存下来，输入下面的命令安装主题：</li>
+<li>The other method is also suitable for theme installation without a compressed package, that is, using the <code>git</code> command to install the theme. If the <code>git</code> command is not installed, install it with a command <code>sudo apt-get install git</code>.</li>
+<li>After installing <code>git</code>, go to the <code>/root/mysites/newblog/themes</code> directory, save the link to the theme page <code>Download</code> button, and enter the following command to install the theme:</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/curttimson/hugo-theme-massively.git
+</code></pre></div>
+  <img src="/img/A07/A0706.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>安装好主题之后，需要修改位于网站<code>newblog</code>目录下的<code>config.toml</code>配置文件，指定使用主题的名称。</li>
+<li>这里推荐参考主题目录中<code>exampleSite</code>目录下的<code>config.toml</code>来完成配置，把这个文件的内容复制到网站根目录下的配置文件即可，包括后续修改主题都需要修改这个文件。</li>
+<li>After installing the theme, you need to modify the <code>config.toml</code> configuration file located in the website <code>newblog</code> directory to specify the name of the theme.</li>
+<li>It is recommended to refer to the <code>config.toml</code> in the <code>exampleSite</code> directory of the theme directory to complete the configuration. Copy the contents of this file to the configuration file under the root directory of the website.</li>
+</ul>
+
+  <img src="/img/A07/A0707.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id4---add-contentsspan"><!-- raw HTML omitted --># 添加内容 | Add contents<!-- raw HTML omitted --></h3>
+<ul>
+<li>主题添加完成后就可以开始创作了，网站根目录下<code>content</code>文件夹是保存博文的目录，<code>static</code>目录可以存放图片、css、js等文件。</li>
+<li>借助Filebrowser在线编辑<code>.md</code>文件，用Markdown语法直接写文章即可。</li>
+<li>After adding theme, you can start creating. The <code>content</code> folder in the root directory of the website is the directory where the blog posts are saved, and the <code>static</code> directory can store files such as images, css, and js.</li>
+<li>Edit the <code>.md</code> file online with Filebrowser and write the article directly in Markdown syntax.</li>
+</ul>
+
+  <img src="/img/A07/A0708.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id5---genetare-pagesspan"><!-- raw HTML omitted --># 生成网页 | Genetare pages<!-- raw HTML omitted --></h3>
+<ul>
+<li>用Hugo生成网页再简单不过了，只需要进入网站根目录<code>/root/mysites/newblog</code>，执行<code>hugo</code>即可。</li>
+<li>后期更新了新的文章，或者修改了主题，凡是有变动，直接执行一遍<code>hugo</code>命令刷新即可。</li>
+<li>It's easy to generate a web page with Hugo. Just go to the root directory of the website <code>/root/mysites/newblog</code> and execute <code>hugo</code>.</li>
+<li>Later, when you update new articles, or modify the theme. If there is any changes, just execute the <code>hugo</code> command to refresh your site.</li>
+</ul>
+
+  <img src="/img/A07/A0709.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id6---customizationspan"><!-- raw HTML omitted --># 个性化主题 | Customization<!-- raw HTML omitted --></h3>
+<ul>
+<li>可以通过修改<code>theme</code>中主题目录的实现细节的微调，删减或者添加功能等。其中<code>layout</code>目录主要包括<code>html</code>的代码，<code>static/assets</code>目录下基本都是<code>css</code>、<code>js</code>、字体等文件。</li>
+<li>You can fine-tune the implementation details of the theme directory in <code>theme</code>, delete or add functions. The <code>layout</code> directory mainly includes the <code>html</code> code, and the <code>static/assets</code> directory contains <code>css</code>, <code>js</code>, fonts and other files.</li>
+</ul>
+
+  <img src="/img/A07/A0710.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id7---publish-websitespan"><!-- raw HTML omitted --># 发布网站 | Publish website<!-- raw HTML omitted --></h3>
+<ul>
+<li>用Hugo生成的静态文件位于网站根目录下的<code>public</code>目录，挂到网页服务器上即可完成发布。</li>
+<li>下一篇博文将带来使用Caddy发布网站的教程，在这里先预告一下，敬请期待。</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A08/A0800.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a07_hugo/">用Hugo生成静态博客 | Generate your static blog using Hugo</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

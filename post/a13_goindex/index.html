@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Goindex免服务器谷歌网盘索引 | Serverless Google drive indexing > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a13_goindex/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a13_goindex/">Goindex免服务器谷歌网盘索引 | Serverless Google drive indexing</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-10-28 | 
+        </span>
+      
+      <span> &#11585; 字数 1151 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A13/A1300.jpg" class="post-cover" alt="img/A13/A1300.jpg"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>Goindex将Google Drive通过Cloudflare网络生成无需科学上网即可访问的在线文件目录，具备轻量，设置简单，无服务器的特点，可以直接列出你谷歌网盘的所有文件，还可以在线观看某些格式的视频文件。</p>
+<p>Combining the power of Cloudflare Workers and Google Drive will allow you to index you files on the browser on Cloudflare Workers.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">获取配置参数 | Get parameters</a></li>
+<li><a href="#2">获取workers代码 | Get workers code</a></li>
+<li><a href="#3">部署到cloudflare | deployment in cloudflare</a></li>
+<li><a href="#4">绑定域名 | Binding domain name</a></li>
+<li><a href="#5">在线播放 | Stream online</a></li>
+<li><a href="#6">参考指南 | User Guide</a></li>
+</ul>
+</blockquote>
+<hr>
+
+  <img src="/img/A13/A1301.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<h3 id="span-id1---get-parametersspan"><!-- raw HTML omitted --># 获取配置参数 | Get parameters<!-- raw HTML omitted --></h3>
+<ul>
+<li>先安装rclone，并配置好你的谷歌网盘，个人推荐无限容量的团队盘，如果没有，可以联系 <a href="https://t.me/mue736">Maxh</a> 免费领取一个。</li>
+<li>First you should have rclone installed, and have google drive config set as well. It is recommended to add an shared team drive that have unlimited storage. Contact <a href="https://t.me/mue736">Maxh</a> to get one for free.</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A12/A1200.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>配置完成后，用filebrowser打开rclone的配置文件<code>/root/.config/rclone/rclone.conf</code>，记下里面的对应的<code>refresh_token</code>，以及<code>team_drive</code>共享团队盘的代码。</li>
+<li>After the configuration is complete, use the filebrowser to open the rclone configuration file <code>/root/.config/rclone/rclone.conf</code>, write down the corresponding <code>refresh_token</code>, and the <code>team_drive</code> code.</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<hr>
+<h3 id="span-id2-workers--get-workers-codespan"><!-- raw HTML omitted --># 获取workers代码 | Get workers code<!-- raw HTML omitted --></h3>
+<ul>
+<li>接下来到<a href="https://github.com/donwa/goindex/blob/master/index.js">donwa/goindex · GitHub</a>把<code>index.js</code>代码复制下来，并且把刚才获取的<code>refresh_token</code>和<code>team_drive</code>填入如下相应位置。</li>
+<li>Next, copy the <code>index.js</code> code in <a href="https://github.com/donwa/goindex/blob/master/index.js">donwa/goindex · GitHub</a>, and fill in the following locations with the <code>refresh_token</code> and <code>team_drive</code> you just got.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">authConfig</span> <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">&#34;siteName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Marsgrid&#34;</span>, <span style="color:#75715e">// 网站名称
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;root_pass&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,  <span style="color:#75715e">// 根目录密码，优先于.password
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;version&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1.0.6&#34;</span>, <span style="color:#75715e">// 程序版本
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;theme&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;material&#34;</span>, <span style="color:#75715e">// material  classic 
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;client_id&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;202264815644.apps.googleusercontent.com&#34;</span>,
+    <span style="color:#e6db74">&#34;client_secret&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;X4Z3ca8xfWDb1Voo-F9a7ZxJ&#34;</span>,
+    <span style="color:#e6db74">&#34;refresh_token&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1/6MO******&#34;</span>, <span style="color:#75715e">// 授权 token | refresh_token
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0AA******&#34;</span> <span style="color:#75715e">// 根目录ID | team_drive
+</span><span style="color:#75715e"></span>};
+</code></pre></div><hr>
+<h3 id="span-id3-cloudflare--deployment-in-cloudflarespan"><!-- raw HTML omitted --># 部署到cloudflare | deployment in cloudflare<!-- raw HTML omitted --></h3>
+<ul>
+<li>登陆Cloudflare，依次选择<code>Workers</code>、<code>Create a worker</code>。</li>
+<li>Log in to Cloudflare and select <code>Workers</code>, then <code>Create a worker</code>.</li>
+</ul>
+
+  <img src="/img/A13/A1302.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<!-- raw HTML omitted -->
+
+  <img src="/img/A13/A1303.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>把刚才准备好的代码复制到左边，然后点击<code>Save and Deploy</code>完成部署。</li>
+<li>Copy the code you just prepared to the left and click <code>Save and Deploy</code> to complete the deployment.</li>
+</ul>
+
+  <img src="/img/A13/A1304.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<!-- raw HTML omitted -->
+
+  <img src="/img/A13/A1305.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id4---binding-domain-namespan"><!-- raw HTML omitted --># 绑定域名 | Binding domain name<!-- raw HTML omitted --></h3>
+<ul>
+<li>部署完成后域名可能会很长，参照以下步骤绑定你自己的三级域名。首先需要先将自己的域名转到cloudflare，然后点自己域名的DNS设置，解析一个A记录，IP地址随意，其他默认。</li>
+<li>After the deployment is complete, the domain name may be very long. Follow the steps below to bind your own third-level domain name. First, you need to transfer your domain name to cloudflare, then click the DNS setting of your domain name, add an A record, the IP address is arbitrary, and other by default.</li>
+</ul>
+
+  <img src="/img/A13/A1306.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>设置完毕后再来到workers页面，点击<code>Add route</code>，输入刚才设置的三级域名，<code>http</code>或<code>https</code>随意，记得末尾要添加<code>/*</code>，<code>Worker</code>选择刚才新建的那个。</li>
+<li>After setting, go to the workers page, click <code>Add route</code>, enter the three-level domain name you just set, type in <code>http</code> or <code>https</code> as you wish. Feel free to add <code>/*</code> at the end, and <code>Worker</code> select the one you just created.</li>
+</ul>
+
+  <img src="/img/A13/A1307.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<!-- raw HTML omitted -->
+
+  <img src="/img/A13/A1308.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id5---stream-onlinespan"><!-- raw HTML omitted --># 在线播放 | Stream online<!-- raw HTML omitted --></h3>
+<ul>
+<li>打开nPlayer内置的浏览器输入刚才配置的域名即可在线播放。</li>
+<li>Open nPlayer's built-in browser and enter the domain name you just configured to go streaming.</li>
+</ul>
+
+  <img src="/img/A13/A1309.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id6---user-guidespan"><!-- raw HTML omitted --># 参考指南 | User Guide<!-- raw HTML omitted --></h3>
+<ul>
+<li>如果你想了解更多Goindex的使用方法，可以访问下方的Github项目页面。</li>
+<li>If you want to learn more about how to use Goindex, you can visit the GitHub page.</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/donwa/goindex">GitHub - donwa/goindex: Google Drive Directory Index</a></p>
+</blockquote>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a13_goindex/">Goindex免服务器谷歌网盘索引 | Serverless Google drive indexing</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

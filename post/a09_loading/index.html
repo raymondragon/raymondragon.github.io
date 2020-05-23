@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>为网站加入Loading加载页 | Add loading page to your site > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a09_loading/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a09_loading/">为网站加入Loading加载页 | Add loading page to your site</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-09-11 | 
+        </span>
+      
+      <span> &#11585; 字数 1194 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A09/A0900.gif" class="post-cover" alt="img/A09/A0900.gif"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>本期教程介绍一下用CSS制作网站加载页面，并且用js来控制加载时间，以及怎样退出加载页面的方法。</p>
+<p>This tutorial introduces how to create a loading page using CSS, and uses js to control the time that the loading page displays, and how to exit the loading page.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">新建CSS文件 | New CSS file</a></li>
+<li><a href="#2">添加HTML代码 | Add HTML code</a></li>
+<li><a href="#3">配置JS函数 | JS function config</a></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="span-id1-css--new-css-filespan"><!-- raw HTML omitted --># 新建CSS文件 | New CSS file<!-- raw HTML omitted --></h3>
+<ul>
+<li>在Hugo主题文件夹下的<code>static/assets</code>文件夹下新建一个<code>loading.css</code>文件，把下面的代码拷进去。</li>
+<li>Create a loading.css file in the <code>static/assets</code> folder under the Hugo theme folder and copy the code below.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* loading */</span>
+
+#loader-wrapper {
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">999999</span>;
+    <span style="color:#66d9ef">overflow</span>: <span style="color:#66d9ef">hidden</span>;
+}
+
+#loader {
+    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">128</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">128</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">-64</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">-64</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">transparent</span>;
+    <span style="color:#66d9ef">border-top-color</span>: <span style="color:#ae81ff">#4285f4</span>;
+    <span style="color:#66d9ef">border-bottom-color</span>: <span style="color:#ae81ff">#4285f4</span>;
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: spin <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span> <span style="color:#66d9ef">infinite</span>;
+    <span style="color:#66d9ef">animation</span>: spin <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">linear</span> <span style="color:#66d9ef">infinite</span>;
+    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">1001</span>;
+    
+}
+
+@<span style="color:#66d9ef">-webkit-keyframes</span> <span style="color:#f92672">spin</span> {
+    <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+        <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">deg</span>);
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">deg</span>)
+    }
+ 
+    <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+        <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">360</span><span style="color:#66d9ef">deg</span>);
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">360</span><span style="color:#66d9ef">deg</span>)
+    }
+}
+
+@<span style="color:#66d9ef">keyframes</span> <span style="color:#f92672">spin</span> {
+    <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
+        <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">deg</span>);
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">0</span><span style="color:#66d9ef">deg</span>)
+    }
+ 
+    <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
+        <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">360</span><span style="color:#66d9ef">deg</span>);
+        <span style="color:#66d9ef">transform</span>: rotate(<span style="color:#ae81ff">360</span><span style="color:#66d9ef">deg</span>)
+    }
+}
+
+#loader-wrapper .<span style="color:#a6e22e">loader-section</span> {
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">51</span><span style="color:#66d9ef">%</span>;
+    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#f2f2f2</span>;
+    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">1000</span>;
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">0</span>)
+}
+
+#loader-wrapper .<span style="color:#a6e22e">loader-section</span>.<span style="color:#a6e22e">section-top</span> {
+    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>
+}
+ 
+#loader-wrapper .<span style="color:#a6e22e">loader-section</span>.<span style="color:#a6e22e">section-bottom</span> {
+    <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">0</span>
+}
+ 
+.<span style="color:#a6e22e">loaded</span> #loader-wrapper .<span style="color:#a6e22e">loader-section</span>.<span style="color:#a6e22e">section-top</span> {
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-100</span><span style="color:#66d9ef">%</span>);
+    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">-100</span><span style="color:#66d9ef">%</span>);
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> cubic-bezier(<span style="color:#ae81ff">0.645</span>,<span style="color:#ae81ff">0.045</span>,<span style="color:#ae81ff">0.355</span>,<span style="color:#ae81ff">1.000</span>);
+    <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> cubic-bezier(<span style="color:#ae81ff">0.645</span>,<span style="color:#ae81ff">0.045</span>,<span style="color:#ae81ff">0.355</span>,<span style="color:#ae81ff">1.000</span>)
+}
+ 
+.<span style="color:#a6e22e">loaded</span> #loader-wrapper .<span style="color:#a6e22e">loader-section</span>.<span style="color:#a6e22e">section-bottom</span> {
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+    <span style="color:#66d9ef">transform</span>: translateY(<span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> cubic-bezier(<span style="color:#ae81ff">0.645</span>,<span style="color:#ae81ff">0.045</span>,<span style="color:#ae81ff">0.355</span>,<span style="color:#ae81ff">1.000</span>);
+    <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">.5</span><span style="color:#66d9ef">s</span> cubic-bezier(<span style="color:#ae81ff">0.645</span>,<span style="color:#ae81ff">0.045</span>,<span style="color:#ae81ff">0.355</span>,<span style="color:#ae81ff">1.000</span>)
+}
+
+.<span style="color:#a6e22e">loaded</span> #loader-wrapper {
+    <span style="color:#66d9ef">visibility</span>: <span style="color:#66d9ef">hidden</span>;
+}
+.<span style="color:#a6e22e">loaded</span> .<span style="color:#a6e22e">loader</span> {
+    <span style="color:#66d9ef">opacity</span>: <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span>;
+    <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease</span>;
+}
+</code></pre></div><ul>
+<li>CSS文件里面定义了loading页面的背景，loader大环以及它的动画，还有加载完毕消失时的动作。</li>
+<li>The CSS file defines the background of the loading page, the loader and its animation, and the actions when loaded.</li>
+</ul>
+<hr>
+<h3 id="span-id2-html--add-html-codespan"><!-- raw HTML omitted --># 添加HTML代码 | Add HTML code<!-- raw HTML omitted --></h3>
+<ul>
+<li>接下来需要把loader写进HTML里，打开Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>baseof.html</code>文件，把下面的代码拷进到<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>之间。</li>
+<li>Next, you need to write the loader into HTML, open the <code>baseof.html</code> file in the <code>layoust/_defalt</code> folder under the Hugo theme folder, and copy the following code between <code>&lt;body&gt;</code> and <code>&lt;/body &gt;</code>.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader-wrapper&#34;</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader-section section-top&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader-section section-bottom&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><ul>
+<li>然后把上一步创建的CSS文件引入到Head中，打开Hugo主题文件夹下的<code>layoust/partials</code>文件夹下的<code>head.html</code>文件，把下面的代码拷进去。</li>
+<li>Then include the CSS file created in the previous step into the Head, open the <code>head.html</code> file in the <code>layoust/partials</code> folder under the Hugo theme folder, and copy the code below.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">assets</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">loading</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">&#34;</span>/&gt;
+</code></pre></div><hr>
+<h3 id="span-id3-js--js-function-configspan"><!-- raw HTML omitted --># 配置JS函数 | JS function config<!-- raw HTML omitted --></h3>
+<ul>
+<li>再回到Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>baseof.html</code>文件，把下面的代码拷进到<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>之间，放在<code>&lt;div id=&quot;loader-wrapper&quot;&gt;...&lt;/div&gt;</code>之后。</li>
+<li>Go back to the <code>baseof.html</code> file in the <code>layoust/_default</code> folder under the Hugo theme folder and copy the following code between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> and after <code>&lt;div id=&quot;loader-wrapper&quot;&gt;...&lt;/div&gt;</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () { document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; loaded&#39;</span>; };
+    window.<span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () { document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; loaded&#39;</span>; }, <span style="color:#ae81ff">1500</span>);
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><ul>
+<li>这条JS是用来控制加载页消失时间的，其中第一条的意思是，页面中所有的元素加载完毕后就将加载页移除。而第二条并列的意思是给加载页设置一个1500ms的倒计时，在这个时间之后将加载页移除。</li>
+<li>这样做既能保证不至于因网络条件不好导致加载时间过长从而引起加载页呆的时间太久，也不会造成返回已经加载好的页面时加载页出现的时间过长。</li>
+<li>This JS is used to control the time when the loading page should disappear. The first one means when all the elements in the page are loaded, remove the loading page. In the meantime, a 1500ms countdown is set to the loading page, after which the loading page is removed.</li>
+<li>This can not only ensure that the loading time is too long due to poor network conditions, causing the loading page to stay too long, and it will not cause the loading page to appear too long when returning already loaded pages.</li>
+</ul>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a09_loading/">为网站加入Loading加载页 | Add loading page to your site</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

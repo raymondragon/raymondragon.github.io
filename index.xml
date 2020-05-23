@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>火星格</title>
+    <link>https://marsgrid.com/</link>
+    <description>Recent content on 火星格</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://marsgrid.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>本站Hugo主题Titan现已开源 ｜ Titan is now open source</title>
+      <link>https://marsgrid.com/post/a14_open_source/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a14_open_source/</guid>
+      <description>本站的Hugo主题经历不断修改打磨，现已开源在Github。 Check my github page. GitHub - raymondragon/titan: a modern hugo theme</description>
+    </item>
+    
+    <item>
+      <title>Goindex免服务器谷歌网盘索引 | Serverless Google drive indexing</title>
+      <link>https://marsgrid.com/post/a13_goindex/</link>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a13_goindex/</guid>
+      <description>Goindex将Google Drive通过Cloudflare网络生成无需科学上网即可访问的在线文件目录，具备轻量，设置简单，无服务器的特点</description>
+    </item>
+    
+    <item>
+      <title>Rclone&#43;Caddy直连谷歌网盘在线播放 | Streaming via web pages</title>
+      <link>https://marsgrid.com/post/a12_rclone/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a12_rclone/</guid>
+      <description>nPlayer可以直接添加谷歌网盘在线串流播放，但是需要科学上网，本教程通过rclone将Google drive挂载在谷歌云服务器，然后用C</description>
+    </item>
+    
+    <item>
+      <title>一行代码实现一键返回顶部 | Back to top in one line of code</title>
+      <link>https://marsgrid.com/post/a11_back2top/</link>
+      <pubDate>Sat, 14 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a11_back2top/</guid>
+      <description>上一期教程介绍了神器Smooth-scroll，这期我们继续深入研究，为网站加入一键返回顶部按钮。 The previous tutorial introduced the artifact Smooth-scroll. In this issue, we continue to delve into the process of adding a back-to-top</description>
+    </item>
+    
+    <item>
+      <title>用Smooth-scroll实现平滑滚动 | It makes scrolling smooth &amp; natural</title>
+      <link>https://marsgrid.com/post/a10_smoothscrool/</link>
+      <pubDate>Fri, 13 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a10_smoothscrool/</guid>
+      <description>本期教程介绍一下怎样用一行代码实现网页内部跳转链接的平滑滚动，同时介绍一个兼容性更好的神器Smooth-scroll。 This tutorial introduces how to use a single line of code</description>
+    </item>
+    
+    <item>
+      <title>为网站加入Loading加载页 | Add loading page to your site</title>
+      <link>https://marsgrid.com/post/a09_loading/</link>
+      <pubDate>Wed, 11 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a09_loading/</guid>
+      <description>本期教程介绍一下用CSS制作网站加载页面，并且用js来控制加载时间，以及怎样退出加载页面的方法。 This tutorial introduces how to create a loading page using CSS, and uses js to control the time that the loading page</description>
+    </item>
+    
+    <item>
+      <title>Caddy从入门到多站配置教程 | Ready your sites with Caddy</title>
+      <link>https://marsgrid.com/post/a08_caddy/</link>
+      <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a08_caddy/</guid>
+      <description>Caddy可是说是一个最容易上手的服务器端，可以非常方便的把我们的网站或网盘部署在上面，而且Caddy是默认无需额外配置即可提供HTTPS特</description>
+    </item>
+    
+    <item>
+      <title>用Hugo生成静态博客 | Generate your static blog using Hugo</title>
+      <link>https://marsgrid.com/post/a07_hugo/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a07_hugo/</guid>
+      <description>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署，非常适合用来生成数据量不大的静态博客。 本篇教程介绍怎样用Hug</description>
+    </item>
+    
+    <item>
+      <title>Filebrowser轻松管理VPS文件 | Deploy Filebrowser in one click</title>
+      <link>https://marsgrid.com/post/a06_filebrowser/</link>
+      <pubDate>Mon, 26 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a06_filebrowser/</guid>
+      <description>上一篇文章我教大家怎样搭建谷歌云VPS，但纯SSH命令行环境没有图形界面，对文件管理操作并不友好。所以本文推荐Filebrowser来接管V</description>
+    </item>
+    
+    <item>
+      <title>谷歌云VPS入门指南 | Getting started with Google Cloud VPS</title>
+      <link>https://marsgrid.com/post/a04_google_cloud/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a04_google_cloud/</guid>
+      <description>拥有用一台云服务器可以让我们做很多有趣的事情，比如创建个人博客，搭建科学上网服务，搞搞离线下载，私人云盘，内网穿透等等。VPS建在哪里好呢，</description>
+    </item>
+    
+    <item>
+      <title>Chrome恐龙彩蛋那些事 | Fun facts about Chrome dino</title>
+      <link>https://marsgrid.com/post/a03_chrome_dino/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a03_chrome_dino/</guid>
+      <description>很多用过Chrome浏览器的盆友可能都玩过这个彩蛋，就是必须先断网才能玩，或者在浏览器地址栏输入chrome://dino回车后强制启动彩蛋</description>
+    </item>
+    
+    <item>
+      <title>Markdown高级应用 | Advanced skills for Markdown</title>
+      <link>https://marsgrid.com/post/a02_markdown/</link>
+      <pubDate>Tue, 06 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a02_markdown/</guid>
+      <description>众所周知，Markdown是一个很厉害的标记语言，演示几种Markdown的高级用法。 A few advanced demos for Markdown. 目录 / LIST 插入图片 | Insert img 插入表格 | Insert sheet 嵌套视</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://marsgrid.com/post/a01_hello_world/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/post/a01_hello_world/</guid>
+      <description> &amp;lt;div&amp;gt;A good start.&amp;lt;/div&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>关于 | About</title>
+      <link>https://marsgrid.com/about/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/about/</guid>
+      <description>网站简介 | Introduction 「火星格」 自2019年8月创建，提供简洁高效的双语浏览环境，不断更新网络技能、建站经验、实用资源，分享有趣的折腾玩耍经验心得，欢</description>
+    </item>
+    
+    <item>
+      <title>目录 | Posts</title>
+      <link>https://marsgrid.com/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://marsgrid.com/archive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Filebrowser轻松管理VPS文件 | Deploy Filebrowser in one click > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a06_filebrowser/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a06_filebrowser/">Filebrowser轻松管理VPS文件 | Deploy Filebrowser in one click</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-08-26 | 
+        </span>
+      
+      <span> &#11585; 字数 1768 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A06/A0600.png" class="post-cover" alt="img/A06/A0600.png"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>上一篇文章我教大家怎样搭建谷歌云VPS，但纯SSH命令行环境没有图形界面，对文件管理操作并不友好。所以本文推荐Filebrowser来接管VPS的文件管理。
+FileBrowser基于Go语言编写，简洁无依赖，作为一款文件浏览器，把服务端部署在服务器上，只要保持连接设备与服务器间网络链接通畅，随时随地就可以通过浏览器访问位于服务器上的存储位置。
+无需专门的应用就可以轻松执行复制、粘贴、移动、新建文件夹等文件管理的操作。此外，FileBrowser还具备文本编辑器、高级分享、文件传输、用户管理、命令行操作、自定义等多种功能，可谓远程文件管理中的瑞士军刀。
+那么这期教程就来聊聊Filebrowser的部署及应用。</p>
+<p>Previously I taught you how to build VPS on Google Cloud, but the pure SSH command line environment without graphical interface is not friendly to file management operations. So let's recommends Filebrowser to take over file management on VPS.
+FileBrowser is written in Go language, simple and non-dependent. As a file browser, the server is deployed on the VPS. As long as the network link between the connected device and the server is kept open, the storage on the server can be accessed through the browser anytime and anywhere.
+You can easily perform file management operations such as copy, paste, move, creating new folder, etc. without an app. In addition, FileBrowser also has a text editor, advanced sharing function, file transfer, user management, customization and many more.
+So let's get started with deployment and application of Filebrowser.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">一键部署 | Deployment</a></li>
+<li><a href="#2">修改配置 | Configurations</a></li>
+<li><a href="#3">服务管理 | Service management</a></li>
+<li><a href="#4">用户管理 | User management</a></li>
+<li><a href="#5">获取根目录权限 | Root permission</a></li>
+<li><a href="#6">个性化定制 | Customization</a></li>
+<li><a href="#7">域名配置 | Domain configuration</a></li>
+</ul>
+</blockquote>
+<hr>
+
+  <img src="/img/A06/A0601.gif"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<h3 id="span-id1---deploymentspan"><!-- raw HTML omitted --># 一键部署 | Deployment<!-- raw HTML omitted --></h3>
+<ul>
+<li>VPS系统要求：Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
+<li>System requirement: Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
+</ul>
+
+  <img src="/img/A06/A0602.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>获取root权限后，直接输入一键部署命令安装或卸载：</li>
+<li>Firstly root access, then enter the one-click deployment command to install or uninstall:</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash &lt;<span style="color:#f92672">(</span>curl -s -L https://233blog.com/filebrowser.sh<span style="color:#f92672">)</span>
+</code></pre></div><blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A04/A0400.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<hr>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="span-id2---configurationsspan"><!-- raw HTML omitted --># 修改配置 | Configurations<!-- raw HTML omitted --></h3>
+<ul>
+<li>等待安装完成，会显示管理地址，默认用户名密码都为<code>admin</code>，登录修改语言及管理密码。</li>
+<li>Wait for the installation to complete, the management address will be displayed, and the default username and password are both <code>admin</code>.</li>
+<li>Login to modify language and password.</li>
+</ul>
+
+  <img src="/img/A06/A0603.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id3---service-managementspan"><!-- raw HTML omitted --># 服务管理 | Service management<!-- raw HTML omitted --></h3>
+<ul>
+<li>在SSH命令行输入如下命令可以快速启动或停止Filebrowser服务。</li>
+<li>Enter the following command on the SSH command line to quickly start or stop the Filebrowser service.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">状态Status： systemctl status filebrowser
+启动Start：  systemctl start filebrowser
+停止Stop：   systemctl stop filebrowser
+重启Restart：systemctl restart filebrowser
+</code></pre></div><hr>
+<h3 id="span-id4---user-managementspan"><!-- raw HTML omitted --># 用户管理 | User management<!-- raw HTML omitted --></h3>
+<ul>
+<li>在<code>全局设置</code>中可以自定义是否允许用户注册。</li>
+<li>In the <code>Global Settings</code> you can set whether to allow user registration.</li>
+</ul>
+
+  <img src="/img/A06/A0604.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>以及用户默认的权限都有哪些。</li>
+<li>And the default permissions.</li>
+</ul>
+
+  <img src="/img/A06/A0605.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>也可在<code>用户管理</code>中对每个用户的权限及可访问的目录进行管理。</li>
+<li>Each user's permissions and accessible directories can also be managed in `User Management&rsquo;.</li>
+</ul>
+
+  <img src="/img/A06/A0606.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id5---root-permissionspan"><!-- raw HTML omitted --># 获取根目录权限 | Root permission<!-- raw HTML omitted --></h3>
+<ul>
+<li>默认情况下，文件管理被限制在<code>/etc/filebrowser</code>目录下，可以修改其中的配置文件<code>filebrowser.json</code>来实现全盘管理。</li>
+<li>By default, file management is restricted to the <code>/etc/filebrowser</code> directory. You may modify the configuration file <code>filebrowser.json</code> to get root access.</li>
+</ul>
+
+  <img src="/img/A06/A0607.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>将其中的<code>&quot;root&quot;: &quot;/etc/filebrowser/&quot;</code>改为<code>&quot;root&quot;: &quot;/&quot;</code>，然后点击右上角的<code>保存</code>按钮，在SSH中输入<code>systemctl restart filebrowser</code>重启服务即可。</li>
+<li>Change <code>&quot;root&quot;: &quot;/etc/filebrowser/&quot;</code> to <code>&quot;root&quot;: &quot;/&quot;</code>, then click the <code>Save</code> button in the upper right corner and type <code>systemctl restart filebrowser</code> in SSH to restart the service.</li>
+</ul>
+
+  <img src="/img/A06/A0608.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id6---customizationspan"><!-- raw HTML omitted --># 个性化定制 | Customization<!-- raw HTML omitted --></h3>
+<ul>
+<li>在<code>全局设置</code>中可以进行个性化定制设置，其中可以填写的包括名称和路径。修改名称可以修改显示在登录界面上的名称，而路径则包含自定义图标和css文件。</li>
+<li>Personalization settings can be made in <code>Global Settings</code>, where you can fill in the name and path. Modifying the name modifies the name that appears on the login screen, while the path contains custom icons and css files.</li>
+</ul>
+
+  <img src="/img/A06/A0609.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>进入刚才填写的自定义路径，新建一个<code>img</code>文件夹存放自定义图标文件，新建<code>custom.css</code>来修改外观。</li>
+<li>Enter the custom path just filled in, create a new <code>img</code> folder to store the custom icon file, and create a new <code>custom.css</code> to modify the appearance.</li>
+</ul>
+
+  <img src="/img/A06/A0610.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>在此分享一下博主找到的深色主题，写入<code>custom.css</code>后，重启Filebrowser服务后生效。</li>
+<li>Let me show you the dark theme I found. After writing into <code>custom.css</code>, it will take effect after restarting the Filebrowser service.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span><span style="color:#f92672">,</span> #login {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#303030</span>;
+}
+
+<span style="color:#f92672">header</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#1b1b1b</span>;
+}
+
+.<span style="color:#a6e22e">action</span><span style="color:#f92672">,</span>
+#breadcrumbs<span style="color:#f92672">,</span>
+#breadcrumbs <span style="color:#f92672">span</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> #nav<span style="color:#f92672">,</span>
+#listing.<span style="color:#a6e22e">mosaic</span> <span style="color:#f92672">h2</span><span style="color:#f92672">,</span>
+#login <span style="color:#f92672">h1</span> {
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+}
+
+#listing.<span style="color:#a6e22e">list</span> .<span style="color:#a6e22e">item</span>.<span style="color:#a6e22e">header</span> {
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#616161</span>;
+}
+
+#listing.<span style="color:#a6e22e">list</span> .<span style="color:#a6e22e">item</span><span style="color:#f92672">,</span>
+#listing.<span style="color:#a6e22e">mosaic</span> .<span style="color:#a6e22e">item</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#424242</span>;
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+}
+
+.<span style="color:#a6e22e">dashboard</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#424242</span>;
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">1.0</span>);
+}
+
+<span style="color:#f92672">select</span><span style="color:#f92672">,</span>
+<span style="color:#f92672">textarea</span><span style="color:#f92672">,</span>
+<span style="color:#f92672">input</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">textarea</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> #locale<span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#212121</span>;
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.9</span>);
+  <span style="color:#66d9ef">border-color</span>: <span style="color:#ae81ff">#303030</span>;
+}
+
+<span style="color:#f92672">select</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">select</span> {
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
+}
+
+#search #input {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#424242</span>;
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+}
+
+#search.<span style="color:#a6e22e">active</span> #input<span style="color:#f92672">&gt;</span>.<span style="color:#a6e22e">action</span> <span style="color:#f92672">i</span><span style="color:#f92672">,</span>
+#search.<span style="color:#a6e22e">active</span> <span style="color:#f92672">input</span><span style="color:#f92672">,</span>
+#search.<span style="color:#a6e22e">active</span> #input<span style="color:#f92672">,</span>
+#login <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span> #login <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#303030</span>;
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+}
+
+#search #result {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#212121</span>;
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+}
+
+#search #result .<span style="color:#a6e22e">boxes</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">card</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#424242</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+}
+
+#search #result .<span style="color:#a6e22e">boxes</span> <span style="color:#f92672">h3</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">card</span> <span style="color:#f92672">h2</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">card</span> <span style="color:#f92672">h3</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">card</span> <span style="color:#f92672">p</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">card-content</span> {
+  <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
+}
+
+#nav <span style="color:#f92672">li</span> {
+  <span style="color:#66d9ef">padding-top</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span> <span style="color:#75715e">!important</span>;
+}
+
+<span style="color:#f92672">nav</span>.<span style="color:#a6e22e">active</span><span style="color:#f92672">,</span> #dropdown.<span style="color:#a6e22e">active</span> {
+    <span style="color:#66d9ef">background-color</span>: rgb(<span style="color:#ae81ff">51</span>, <span style="color:#ae81ff">51</span>, <span style="color:#ae81ff">51</span>);
+}
+
+#file-selection {
+    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#303030</span>;
+}
+</code></pre></div><hr>
+<h3 id="span-id7---domain-configurationspan"><!-- raw HTML omitted --># 域名配置 | Domain configuration<!-- raw HTML omitted --></h3>
+<ul>
+<li>如果你有域名，可以通过Caddy等服务器程序代理Filebrowser的管理页面，直接访问域名即可访问Filebrowser。</li>
+<li>If you have a domain name, you can access Filebrowser by directly accessing the domain name using <code>proxy</code> of Caddy, etc.</li>
+</ul>
+<blockquote>
+<p><a href="https://dl.marsgrid.com">https://dl.marsgrid.com</a></p>
+</blockquote>
+<ul>
+<li>这是本站Filebrowser网盘页面，也可从主页菜单中找到，博主将不定时上传资源，欢迎注册下载。</li>
+<li>This is the Filebrowser page of Marsgrid.com, which can also be found from the homepage menu. Feel free to register and download files.</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A08/A0800.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a06_filebrowser/">Filebrowser轻松管理VPS文件 | Deploy Filebrowser in one click</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

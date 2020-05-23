@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>Caddy从入门到多站配置教程 | Ready your sites with Caddy > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a08_caddy/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a08_caddy/">Caddy从入门到多站配置教程 | Ready your sites with Caddy</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-09-03 | 
+        </span>
+      
+      <span> &#11585; 字数 1582 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A08/A0800.jpg" class="post-cover" alt="img/A08/A0800.jpg"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>Caddy可是说是一个最容易上手的服务器端，可以非常方便的把我们的网站或网盘部署在上面，而且Caddy是默认无需额外配置即可提供HTTPS特性的Web服务器。
+这期教程主要从Caddy的安装、配置、启动入门，然后参考本站配置文件，逐一解析Caddy的使用方法。</p>
+<p>Caddy is said to be the easiest to use server side, it is very convenient to deploy our website or network disk, and Caddy is a web server that provides HTTPS features by default without additional configuration.
+This tutorial describes mainly from the installation, configuration, startup of Caddy, and then refer to the site configuration file to analyze the use of Caddy.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">安装卸载 | Deployment</a></li>
+<li><a href="#2">使用说明 | Instructions</a></li>
+<li><a href="#3">修改配置 | Configuration File</a></li>
+<li><a href="#4">启动Caddy | Launch Caddy</a></li>
+<li><a href="#5">多站配置解析 | Caddyfile example</a>
+<ul>
+<li><a href="#5-1">博客配置 | Blog Config</a></li>
+<li><a href="#5-2">设置跳转 | Redirection</a></li>
+<li><a href="#5-3">反代站点 | Proxy sites</a></li>
+</ul>
+</li>
+<li><a href="#6">参考指南 | User Guide</a></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="span-id1---deploymentspan"><!-- raw HTML omitted --># 安装卸载 | Deployment<!-- raw HTML omitted --></h3>
+<ul>
+<li>VPS系统要求：Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
+<li>System requirement: Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装 Install</span>
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x caddy_install.sh <span style="color:#f92672">&amp;&amp;</span> bash caddy_install.sh
+<span style="color:#75715e"># 安装插件 Install plugin</span>
+bash caddy_install.sh xxx,xxx
+<span style="color:#75715e"># 卸载 Uninstall</span>
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x caddy_install.sh <span style="color:#f92672">&amp;&amp;</span> bash caddy_install.sh uninstall
+</code></pre></div><ul>
+<li>这里推广一下<a href="https://github.com/ToyoDAdoubi">逗比</a>的一键安装脚本，直接输入按照提示选择安装完成即可。</li>
+<li>Just follow this one-click installation script to install caddy server.</li>
+</ul>
+
+  <img src="/img/A08/A0801.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id2---instructionsspan"><!-- raw HTML omitted --># 使用说明 | Instructions<!-- raw HTML omitted --></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">启动Start：/etc/init.d/caddy start
+停止Stop：/etc/init.d/caddy stop
+重启Restart：/etc/init.d/caddy restart
+查看状态Status：/etc/init.d/caddy status
+查看启动日志Logfile：tail -f /tmp/caddy.log
+安装目录Caddy Dir：/usr/local/caddy
+配置文件位置Caddyfile：/usr/local/caddy/Caddyfile
+证书位置SSL Dir：/.caddy/acme/acme-v01.api.letsencrypt.org/sites/xxx.xxx<span style="color:#f92672">(</span>域名<span style="color:#f92672">)</span>/
+</code></pre></div><hr>
+<h3 id="span-id3---configuration-filespan"><!-- raw HTML omitted --># 修改配置 | Configuration File<!-- raw HTML omitted --></h3>
+<ul>
+<li>Caddy的配置文件名叫Caddyfile，我们直接用Filebrowser在线打开这个<code>/usr/local/caddy/Caddyfile</code>，编辑文件即可。配置文件修改完成后需要重启Caddy生效。</li>
+<li>Caddy's configuration file name is Caddyfile. We can open this <code>/usr/local/caddy/Caddyfile</code> directly with Filebrowser and edit the file. After the configuration file is modified, you need to restart Caddy to take effect.</li>
+</ul>
+
+  <img src="/img/A08/A0802.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<hr>
+<h3 id="span-id4-caddy--launch-caddyspan"><!-- raw HTML omitted --># 启动Caddy | Launch Caddy<!-- raw HTML omitted --></h3>
+<ul>
+<li>在SSH中直接输入<code>/etc/init.d/caddy start</code>即可启动Caddy。</li>
+<li>Start Caddy by typing <code>/etc/init.d/caddy start</code> directly in SSH.</li>
+</ul>
+
+  <img src="/img/A08/A0803.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
+
+
+<ul>
+<li>如果运行出错，可以通过log查看哪里出错了<code>tail -f /tmp/caddy.log</code>。</li>
+<li>If the start goes wrong, you can check the log for error <code>tail -f /tmp/caddy.log</code>.</li>
+</ul>
+<hr>
+<h3 id="span-id5---caddyfile-examplespan"><!-- raw HTML omitted --># 多站配置解析 | Caddyfile example<!-- raw HTML omitted --></h3>
+<ul>
+<li>Caddy可以添加多站点配置，以本站的Caddyfile为例：</li>
+<li>Caddy can add a multi-site configuration, taking the Caddyfile of this site as an example:</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">https:<span style="color:#75715e">//marsgrid.com {
+</span><span style="color:#75715e"></span> gzip
+ root <span style="color:#f92672">/</span>home<span style="color:#f92672">/</span>marsgrid<span style="color:#f92672">/</span><span style="color:#66d9ef">public</span>
+ tls mue736<span style="color:#a6e22e">@gmail.com</span>
+ errors <span style="color:#f92672">{</span>
+  <span style="color:#f92672">*</span> <span style="color:#f92672">/</span>home<span style="color:#f92672">/</span>marsgrid<span style="color:#f92672">/</span><span style="color:#66d9ef">public</span><span style="color:#f92672">/</span>404<span style="color:#f92672">.</span><span style="color:#a6e22e">html</span>
+ <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+https:<span style="color:#75715e">//www.marsgrid.com {
+</span><span style="color:#75715e"></span> redir https<span style="color:#f92672">:</span><span style="color:#75715e">//marsgrid.com
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
+https:<span style="color:#75715e">//dl.marsgrid.com {
+</span><span style="color:#75715e"></span> gzip
+ tls mue736<span style="color:#a6e22e">@gmail.com</span>
+ proxy <span style="color:#f92672">/</span> 127<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">1</span><span style="color:#f92672">:</span>20000
+<span style="color:#f92672">}</span>
+https:<span style="color:#75715e">//search.marsgrid.com {
+</span><span style="color:#75715e"></span> gzip
+ tls mue736<span style="color:#a6e22e">@gmail.com</span>
+ proxy <span style="color:#f92672">/</span> https<span style="color:#f92672">:</span><span style="color:#75715e">//www.google.com.hk
+</span><span style="color:#75715e"></span> basicauth <span style="color:#f92672">/</span> admin admin
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<h3 id="span-id5-1---blog-configspan"><!-- raw HTML omitted -->## 博客配置 | Blog Config<!-- raw HTML omitted --></h3>
+<table>
+<thead>
+<tr>
+<th align="center">指令Directives</th>
+<th align="center">说明Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">gzip</td>
+<td align="center">启用压缩 Enables gzip compression</td>
+</tr>
+<tr>
+<td align="center">root</td>
+<td align="center">指向网站根目录 Specifies the root of the site</td>
+</tr>
+<tr>
+<td align="center">tls</td>
+<td align="center">配置HTTPS连接，需要填写邮箱，Caddy会自动申请证书 Configures HTTPS connections, mail addr. needed</td>
+</tr>
+<tr>
+<td align="center">errors</td>
+<td align="center">指向404或500错误页面 Set custom error pages</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A07/A0700.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<hr>
+<h3 id="span-id5-2---redirectionspan"><!-- raw HTML omitted -->## 设置跳转 | Redirection<!-- raw HTML omitted --></h3>
+<table>
+<thead>
+<tr>
+<th align="center">指令Directives</th>
+<th align="center">说明Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">redir</td>
+<td align="center">将www域名重定向 Redirect www domain</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="span-id5-3---proxy-sitesspan"><!-- raw HTML omitted -->## 反代站点 | Proxy sites<!-- raw HTML omitted --></h3>
+<table>
+<thead>
+<tr>
+<th align="center">指令Directives</th>
+<th align="center">说明Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">proxy</td>
+<td align="center">实现反向代理 Reverse proxy enabled</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>通过设置本地反向代理，可以把之前部署的Filebrowser挂到我们的域名下，<code>proxy / 127.0.0.1:20000</code>，注意标明端口号。</li>
+<li>By setting the local reverse proxy, you can hang the previously deployed Filebrowser under our domain name, <code>proxy / 127.0.0.1:20000</code>, and note the port.</li>
+</ul>
+<blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+<ul>
+<li>还可以设置其他地址的反向代理，比如反代一下谷歌？打造自己的镜像站。</li>
+<li>Can also set up a reverse proxy for other sites, such as the Google? You can now build your own mirror sites.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">指令Directives</th>
+<th align="center">说明Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">basicauth</td>
+<td align="center">设置用户名和口令 Set username and password</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>与此同时，可以把镜像站设置密码，可以登录本站导航栏中的<code>搜索|Search</code>镜像站试一下。</li>
+<li>At the same time, you can set the password to login your mirror sites. Simply go to <code>搜索|Search</code> on the top to login.</li>
+</ul>
+<hr>
+<h3 id="span-id6---user-guidespan"><!-- raw HTML omitted --># 参考指南 | User Guide<!-- raw HTML omitted --></h3>
+<ul>
+<li>如果你想了解更多Caddy的使用方法，可以访问下方的官方指南。</li>
+<li>If you want to learn more about how to use Caddy, you can visit the official guide below.</li>
+</ul>
+<blockquote>
+<p><a href="https://docs.getcaddy.cn/">Caddy 中文文档：https://docs.getcaddy.cn/</a></p>
+<p><a href="https://caddyserver.com/docs">Caddy User Guide: https://caddyserver.com/docs</a></p>
+</blockquote>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a08_caddy/">Caddy从入门到多站配置教程 | Ready your sites with Caddy</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>

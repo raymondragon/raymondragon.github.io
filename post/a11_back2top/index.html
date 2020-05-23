@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <title>一行代码实现一键返回顶部 | Back to top in one line of code > 火星格 | Marsgrid</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="分享网络技巧和实用资源的双语博客 | Bilingual blog sharing internet resources and skills"/>
+<meta name="keywords" content="火星格,marsgrid"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="https://marsgrid.com/post/a11_back2top/" />
+
+
+<link rel="stylesheet" href="https://marsgrid.com/assets/style.css"/>
+<link rel="stylesheet" href="https://marsgrid.com/assets/style-plus.css"/>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png"/>
+<link rel="manifest" href="/img/favicon/site.webmanifest"/>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145063865-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<span id="top"></span>
+
+
+  </head>
+  <body class="dark-theme">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-top"></div>
+        <div class="loader-section section-bottom"></div>
+    </div>
+    <script type="text/javascript">
+        window.onload = function () { document.body.className += ' loaded'; };
+        window.setTimeout(function () { document.body.className += ' loaded'; }, 1500);
+    </script>
+    
+    <center>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:970px;height:90px"
+         data-ad-client="ca-pub-8569789852560067"
+         data-ad-slot="5398983999"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </center>
+    
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">火星格 | Marsgrid</span>
+    <span class="logo__cursor"></span>
+</a>
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于 | About</a></li>
+        
+      
+        
+          <li><a href="/archive">目录 | Posts</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      <li><a href="/about">关于 | About</a></li>
+    
+      <li><a href="/archive">目录 | Posts</a></li>
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+      <div class="content">
+        
+  <script src="https://marsgrid.com/assets/prism.js"></script>
+  <script src="https://marsgrid.com/assets/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', { speed: 200 });</script>
+  <div class="post">
+    <h2 class="post-title"><a href="https://marsgrid.com/post/a11_back2top/">一行代码实现一键返回顶部 | Back to top in one line of code</a></h2>
+    <div class="post-meta">
+      
+        <span class="post-date">
+            &#11596; 2019-09-14 | 
+        </span>
+      
+      <span> &#11585; 字数 796 words</span>
+    </div>
+    
+      <img src="https://marsgrid.com/img/A11/A1100.gif" class="post-cover" alt="img/A11/A1100.gif"/>
+    
+    <div class="post-content">
+      <hr>
+<blockquote>
+<p>上一期教程介绍了神器Smooth-scroll，这期我们继续深入研究，为网站加入一键返回顶部按钮。</p>
+<p>The previous tutorial introduced the artifact Smooth-scroll. In this issue, we continue to delve into the process of adding a back-to-top button in your site.</p>
+<h3 id="--list">目录 / LIST</h3>
+<ul>
+<li><a href="#1">修改style.css | Modify style.css</a></li>
+<li><a href="#2">下载SVG | Download SVG</a></li>
+<li><a href="#3">添加锚点 | Adding anchor</a></li>
+<li><a href="#4">一键返回顶部 | Back to top</a></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="span-id1-stylecss--modify-stylecssspan"><!-- raw HTML omitted --># 修改style.css | Modify style.css<!-- raw HTML omitted --></h3>
+<ul>
+<li>首先用在CSS中定义返回顶部按钮的位置和样式等信息，只需要在Hugo主题目录下<code>static/assets</code>的<code>style.css</code>文件中直接加入如下代码即可。</li>
+<li>Firstly we should custom the back-to-top button a single line of code directly to the <code>style.css</code> file in the <code>static/assets</code> directory of the Hugo theme.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">backtop</span> {
+    <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#b3b1b1</span>;
+    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+    <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">32</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">32</span><span style="color:#66d9ef">px</span>;
+    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">999998</span>;
+}
+</code></pre></div><hr>
+<h3 id="span-id2-svg--download-svgspan"><!-- raw HTML omitted --># 下载SVG | Download SVG<!-- raw HTML omitted --></h3>
+<ul>
+<li>推荐在<code>Font Awesome</code>这个网站现在SVG图标，点击下方链接，选择你喜欢的箭头图标，或者用其他任何图标都可以，然后点击屏幕中间的<code>Download SVG</code>按钮下载SVG文件。</li>
+<li>Recommend the SVG icon on the website of <code>Font Awesome</code>, click on the link below, select the arrow icon you like, or use any other icon, then click the <code>Download SVG</code> button in the middle of the screen to download the SVG file.</li>
+</ul>
+<blockquote>
+<p><a href="https://fontawesome.com/icons?d=gallery&amp;q=arrow&amp;m=free">Arrow Icons | Font Awesome</a></p>
+</blockquote>
+<ul>
+<li>可以使用记事本打开刚才下载的SVG文件，可以看到<code>&lt;svg&gt;</code>信息，全选拷贝到Hugo主题目录下<code>layouts/partials</code>中新建的<code>arrow.html</code>文件中。</li>
+<li>You can use Notepad to open the SVG file you just downloaded, you can see the <code>&lt;svg&gt;</code> information, and copy it all to the new <code>arrow.html</code> file in <code>layouts/partials</code> under the Hugo theme directory.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">focusable</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">data-prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fas&#34;</span> <span style="color:#a6e22e">data-icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chevron-circle-up&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;svg-inline--fa fa-chevron-circle-up fa-w-16&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 512 512&#34;</span>&gt;
+    &lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;currentColor&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z&#34;</span>&gt;
+    &lt;/<span style="color:#f92672">path</span>&gt;
+&lt;/<span style="color:#f92672">svg</span>&gt;
+</code></pre></div><hr>
+<h3 id="span-id3---adding-anchorspan"><!-- raw HTML omitted --># 添加锚点 | Adding anchor<!-- raw HTML omitted --></h3>
+<ul>
+<li>打开Hugo主题目录下<code>layouts/partials</code>中的<code>head.html</code>文件，在任意行添加如下代码，添加锚点。</li>
+<li>Open the <code>head.html</code> file in <code>layouts/partials</code> under the Hugo theme directory, add the following code to any line, and add an anchor point.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div><hr>
+<h3 id="span-id4---back-to-topspan"><!-- raw HTML omitted --># 一键返回顶部 | Back to top<!-- raw HTML omitted --></h3>
+<ul>
+<li>回到Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>single.html</code>文件，把下面的代码拷进到<code>{{ define &quot;main&quot; }}</code>之后。再去SSH里Hugo一下就搞定啦。</li>
+<li>Go back to the <code>single.html</code> file in the <code>layoust/_default</code> folder under the Hugo theme folder and copy the following code after <code>{{ define &quot;main&quot; }}</code>.</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#top&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;backtop&#34;</span>&gt;{{ partial &#34;arrow.html&#34; . }}&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><blockquote>
+<p>你可能会感兴趣 | Maybe interested in</p>
+<p><!-- raw HTML omitted -->
+  <img src="/img/A10/A1000.gif"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
+
+<!-- raw HTML omitted --></p>
+</blockquote>
+
+      <div>&nbsp;</div>
+      
+      <center>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:860px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="5398983999"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> END </span>
+          <hr />
+        </div>
+      </div>
+      <div> • 本文作者 | Author info >> <a href="https://t.me/m0n5k">冰川大魔王</a></div>
+      <div> • 来源链接 | Source link >> <a href="https://marsgrid.com/post/a11_back2top/">一行代码实现一键返回顶部 | Back to top in one line of code</a></div>
+      <div> • 发表评论 | Make comments >></div>
+      <div>&nbsp;</div>
+    </div>
+    <div id="vcomments"></div>
+    <link rel="stylesheet" href="https://marsgrid.com/assets/valine-plus.css"/>
+    <script src="https://marsgrid.com/assets/av-min.js"></script>
+    <script src="https://marsgrid.com/assets/Valine.min.js"></script>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments',
+          appId: 'Jz7l9civocHCkwQfUXW5UKYE-MdYXbMMI',
+          appKey: '4HpxufdgAXGD5sXjB49VMjDy',
+          notify:  false , 
+          verify:  true , 
+          avatar:'', 
+          placeholder: ' ',
+          lang: 'en',
+          avatarForce: false,
+      });
+    </script>
+    
+    <a href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up" class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+    <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"> MARSGRID </span>
+          <hr />
+        </div>
+    </div>
+    <div>&nbsp;</div>
+  </div>
+
+      </div>
+      
+      <center>
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:970px;height:90px"
+           data-ad-client="ca-pub-8569789852560067"
+           data-ad-slot="4758261647"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </center>
+      
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+    <img src="/img/logo.svg" alt="M" />
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" width="44" height="44" viewBox="0 0 44 44">
+  <polyline fill="none" stroke="#b3b1b1" stroke-width="2" points="15 8 29.729 22.382 15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">Marsgrid.com</span>
+    <span class="logo__cursor"></span>
+</a>
+
+    <div class="copyright">
+        <span>Copyright © 2020 火星格</span>
+        <span id="busuanzi_container_site_pv">点击量&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;Clicks</span>
+    </div>
+  </div>
+</footer>
+<script async src="https://marsgrid.com/assets/counter.js"></script>
+<script async src="https://marsgrid.com/assets/main.js"></script>
+
+
+
+
+      
+    </div>
+  </body>
+</html>
