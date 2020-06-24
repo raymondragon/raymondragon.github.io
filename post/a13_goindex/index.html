@@ -131,7 +131,7 @@ if (!doNotTrack) {
             &#11596; 2019-10-28 | 
         </span>
       
-      <span> &#11585; 字数 1151 words</span>
+      <span> &#11585; 字数 1154 words</span>
     </div>
     
       <img src="https://marsgrid.com/img/A13/A1300.jpg" class="post-cover" alt="img/A13/A1300.jpg"/>
@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>Goindex将Google Drive通过Cloudflare网络生成无需科学上网即可访问的在线文件目录，具备轻量，设置简单，无服务器的特点，可以直接列出你谷歌网盘的所有文件，还可以在线观看某些格式的视频文件。</p>
 <p>Combining the power of Cloudflare Workers and Google Drive will allow you to index you files on the browser on Cloudflare Workers.</p>
-<h3 id="--list">目录 / LIST</h3>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">获取配置参数 | Get parameters</a></li>
 <li><a href="#2">获取workers代码 | Get workers code</a></li>
@@ -156,17 +156,17 @@ if (!doNotTrack) {
   <img src="/img/A13/A1301.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
-<h3 id="span-id1---get-parametersspan"><!-- raw HTML omitted --># 获取配置参数 | Get parameters<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-获取配置参数--get-parametersspan"><span id="1"># 获取配置参数 | Get parameters</span></h3>
 <ul>
 <li>先安装rclone，并配置好你的谷歌网盘，个人推荐无限容量的团队盘，如果没有，可以联系 <a href="https://t.me/mue736">Maxh</a> 免费领取一个。</li>
 <li>First you should have rclone installed, and have google drive config set as well. It is recommended to add an shared team drive that have unlimited storage. Contact <a href="https://t.me/mue736">Maxh</a> to get one for free.</li>
 </ul>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a12_rclone/">
   <img src="/img/A12/A1200.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <ul>
 <li>配置完成后，用filebrowser打开rclone的配置文件<code>/root/.config/rclone/rclone.conf</code>，记下里面的对应的<code>refresh_token</code>，以及<code>team_drive</code>共享团队盘的代码。</li>
@@ -174,18 +174,18 @@ if (!doNotTrack) {
 </ul>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a06_filebrowser/">
   <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <hr>
-<h3 id="span-id2-workers--get-workers-codespan"><!-- raw HTML omitted --># 获取workers代码 | Get workers code<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-获取workers代码--get-workers-codespan"><span id="2"># 获取workers代码 | Get workers code</span></h3>
 <ul>
 <li>接下来到<a href="https://github.com/donwa/goindex/blob/master/index.js">donwa/goindex · GitHub</a>把<code>index.js</code>代码复制下来，并且把刚才获取的<code>refresh_token</code>和<code>team_drive</code>填入如下相应位置。</li>
 <li>Next, copy the <code>index.js</code> code in <a href="https://github.com/donwa/goindex/blob/master/index.js">donwa/goindex · GitHub</a>, and fill in the following locations with the <code>refresh_token</code> and <code>team_drive</code> you just got.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">authConfig</span> <span style="color:#f92672">=</span> {
     <span style="color:#e6db74">&#34;siteName&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Marsgrid&#34;</span>, <span style="color:#75715e">// 网站名称
 </span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;root_pass&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;&#34;</span>,  <span style="color:#75715e">// 根目录密码，优先于.password
@@ -197,7 +197,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#34;root&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0AA******&#34;</span> <span style="color:#75715e">// 根目录ID | team_drive
 </span><span style="color:#75715e"></span>};
 </code></pre></div><hr>
-<h3 id="span-id3-cloudflare--deployment-in-cloudflarespan"><!-- raw HTML omitted --># 部署到cloudflare | deployment in cloudflare<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-部署到cloudflare--deployment-in-cloudflarespan"><span id="3"># 部署到cloudflare | deployment in cloudflare</span></h3>
 <ul>
 <li>登陆Cloudflare，依次选择<code>Workers</code>、<code>Create a worker</code>。</li>
 <li>Log in to Cloudflare and select <code>Workers</code>, then <code>Create a worker</code>.</li>
@@ -206,7 +206,7 @@ if (!doNotTrack) {
   <img src="/img/A13/A1302.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
-<!-- raw HTML omitted -->
+<div>&nbsp;</div>
 
   <img src="/img/A13/A1303.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
@@ -219,13 +219,13 @@ if (!doNotTrack) {
   <img src="/img/A13/A1304.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
-<!-- raw HTML omitted -->
+<div>&nbsp;</div>
 
   <img src="/img/A13/A1305.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
 <hr>
-<h3 id="span-id4---binding-domain-namespan"><!-- raw HTML omitted --># 绑定域名 | Binding domain name<!-- raw HTML omitted --></h3>
+<h3 id="span-id4-绑定域名--binding-domain-namespan"><span id="4"># 绑定域名 | Binding domain name</span></h3>
 <ul>
 <li>部署完成后域名可能会很长，参照以下步骤绑定你自己的三级域名。首先需要先将自己的域名转到cloudflare，然后点自己域名的DNS设置，解析一个A记录，IP地址随意，其他默认。</li>
 <li>After the deployment is complete, the domain name may be very long. Follow the steps below to bind your own third-level domain name. First, you need to transfer your domain name to cloudflare, then click the DNS setting of your domain name, add an A record, the IP address is arbitrary, and other by default.</li>
@@ -242,23 +242,23 @@ if (!doNotTrack) {
   <img src="/img/A13/A1307.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
-<!-- raw HTML omitted -->
+<div>&nbsp;</div>
 
   <img src="/img/A13/A1308.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
 <hr>
-<h3 id="span-id5---stream-onlinespan"><!-- raw HTML omitted --># 在线播放 | Stream online<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-在线播放--stream-onlinespan"><span id="5"># 在线播放 | Stream online</span></h3>
 <ul>
 <li>打开nPlayer内置的浏览器输入刚才配置的域名即可在线播放。</li>
-<li>Open nPlayer's built-in browser and enter the domain name you just configured to go streaming.</li>
+<li>Open nPlayer&rsquo;s built-in browser and enter the domain name you just configured to go streaming.</li>
 </ul>
 
   <img src="/img/A13/A1309.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
 <hr>
-<h3 id="span-id6---user-guidespan"><!-- raw HTML omitted --># 参考指南 | User Guide<!-- raw HTML omitted --></h3>
+<h3 id="span-id6-参考指南--user-guidespan"><span id="6"># 参考指南 | User Guide</span></h3>
 <ul>
 <li>如果你想了解更多Goindex的使用方法，可以访问下方的Github项目页面。</li>
 <li>If you want to learn more about how to use Goindex, you can visit the GitHub page.</li>

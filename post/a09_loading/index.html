@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>本期教程介绍一下用CSS制作网站加载页面，并且用js来控制加载时间，以及怎样退出加载页面的方法。</p>
 <p>This tutorial introduces how to create a loading page using CSS, and uses js to control the time that the loading page displays, and how to exit the loading page.</p>
-<h3 id="--list">目录 / LIST</h3>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">新建CSS文件 | New CSS file</a></li>
 <li><a href="#2">添加HTML代码 | Add HTML code</a></li>
@@ -149,12 +149,12 @@ if (!doNotTrack) {
 </ul>
 </blockquote>
 <hr>
-<h3 id="span-id1-css--new-css-filespan"><!-- raw HTML omitted --># 新建CSS文件 | New CSS file<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-新建css文件--new-css-filespan"><span id="1"># 新建CSS文件 | New CSS file</span></h3>
 <ul>
 <li>在Hugo主题文件夹下的<code>static/assets</code>文件夹下新建一个<code>loading.css</code>文件，把下面的代码拷进去。</li>
 <li>Create a loading.css file in the <code>static/assets</code> folder under the Hugo theme folder and copy the code below.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* loading */</span>
 
 #loader-wrapper {
@@ -255,12 +255,12 @@ if (!doNotTrack) {
 <li>The CSS file defines the background of the loading page, the loader and its animation, and the actions when loaded.</li>
 </ul>
 <hr>
-<h3 id="span-id2-html--add-html-codespan"><!-- raw HTML omitted --># 添加HTML代码 | Add HTML code<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-添加html代码--add-html-codespan"><span id="2"># 添加HTML代码 | Add HTML code</span></h3>
 <ul>
 <li>接下来需要把loader写进HTML里，打开Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>baseof.html</code>文件，把下面的代码拷进到<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>之间。</li>
 <li>Next, you need to write the loader into HTML, open the <code>baseof.html</code> file in the <code>layoust/_defalt</code> folder under the Hugo theme folder, and copy the following code between <code>&lt;body&gt;</code> and <code>&lt;/body &gt;</code>.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader-wrapper&#34;</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;loader-section section-top&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
@@ -270,15 +270,15 @@ if (!doNotTrack) {
 <li>然后把上一步创建的CSS文件引入到Head中，打开Hugo主题文件夹下的<code>layoust/partials</code>文件夹下的<code>head.html</code>文件，把下面的代码拷进去。</li>
 <li>Then include the CSS file created in the previous step into the Head, open the <code>head.html</code> file in the <code>layoust/partials</code> folder under the Hugo theme folder, and copy the code below.</li>
 </ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">assets</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">loading</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">&#34;</span>/&gt;
+<div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">assets</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">loading</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">css</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>/&gt;
 </code></pre></div><hr>
-<h3 id="span-id3-js--js-function-configspan"><!-- raw HTML omitted --># 配置JS函数 | JS function config<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-配置js函数--js-function-configspan"><span id="3"># 配置JS函数 | JS function config</span></h3>
 <ul>
 <li>再回到Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>baseof.html</code>文件，把下面的代码拷进到<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>之间，放在<code>&lt;div id=&quot;loader-wrapper&quot;&gt;...&lt;/div&gt;</code>之后。</li>
 <li>Go back to the <code>baseof.html</code> file in the <code>layoust/_default</code> folder under the Hugo theme folder and copy the following code between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code> and after <code>&lt;div id=&quot;loader-wrapper&quot;&gt;...&lt;/div&gt;</code></li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
     window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () { document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; loaded&#39;</span>; };
     window.<span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () { document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">className</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39; loaded&#39;</span>; }, <span style="color:#ae81ff">1500</span>);

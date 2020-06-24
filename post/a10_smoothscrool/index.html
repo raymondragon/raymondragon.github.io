@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>本期教程介绍一下怎样用一行代码实现网页内部跳转链接的平滑滚动，同时介绍一个兼容性更好的神器Smooth-scroll。</p>
 <p>This tutorial introduces how to use a single line of code to achieve smooth scrolling, and introduces a more compatible artifact: Smooth-scroll.</p>
-<h3 id="--list">目录 / LIST</h3>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">修改style.css | Modify style.css</a></li>
 <li><a href="#2">下载Smooth-scroll | Downloading</a></li>
@@ -149,12 +149,12 @@ if (!doNotTrack) {
 </ul>
 </blockquote>
 <hr>
-<h3 id="span-id1-stylecss--modify-stylecssspan"><!-- raw HTML omitted --># 修改style.css | Modify style.css<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-修改stylecss--modify-stylecssspan"><span id="1"># 修改style.css | Modify style.css</span></h3>
 <ul>
 <li>实现平滑滚动最简单的一种方法，一行代码就可以实现，只需要在Hugo主题目录下<code>static/assets</code>的<code>style.css</code>文件中直接加入如下代码即可。</li>
 <li>The easiest way is adding a single line of code directly to the <code>style.css</code> file in the <code>static/assets</code> directory of the Hugo theme.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">html</span><span style="color:#f92672">,</span> <span style="color:#f92672">body</span> { scroll-behavior:<span style="color:#66d9ef">smooth</span>; }
 </code></pre></div><ul>
 <li>但是这种方法兼容性不好，比如Safari浏览器就不支持，因此需要寻找一种兼容性更好的方案。</li>
@@ -165,7 +165,7 @@ if (!doNotTrack) {
 
 
 <hr>
-<h3 id="span-id2-smooth-scroll--downloadingspan"><!-- raw HTML omitted --># 下载Smooth-scroll | Downloading<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-下载smooth-scroll--downloadingspan"><span id="2"># 下载Smooth-scroll | Downloading</span></h3>
 <ul>
 <li>推荐使用<code>Smooth-scroll</code>这个轻量级脚本来实现平滑滚动，首先需要在GitHub项目里的<code>releases</code>里下载最新脚本。</li>
 <li>It is recommended to use the lightweight script <code>Smooth-scroll</code> for smooth scrolling. First you need to download the latest script in <code>releases</code> in the GitHub project.</li>
@@ -178,13 +178,13 @@ if (!doNotTrack) {
 <li>Unzip the <code>smooth-scroll.js</code> file in the <code>src/js/smooth-scroll/</code> directory to the <code>static/assets</code> directory under the Hugo theme folder.</li>
 </ul>
 <hr>
-<h3 id="span-id3-smooth-scroll--configurationsspan"><!-- raw HTML omitted --># 配置Smooth-scroll | Configurations<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-配置smooth-scroll--configurationsspan"><span id="3"># 配置Smooth-scroll | Configurations</span></h3>
 <ul>
 <li>回到Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>single.html</code>文件，把下面的代码拷进到<code>{{ define &quot;main&quot; }}</code>之后。再去SSH里Hugo一下就搞定啦。</li>
 <li>Go back to the <code>single.html</code> file in the <code>layoust/_default</code> folder under the Hugo theme folder and copy the following code after <code>{{ define &quot;main&quot; }}</code>.</li>
 </ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">assets</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">smooth-scroll</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<div></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">assets</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">smooth-scroll</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">js</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
 &lt;<span style="color:#f92672">script</span>&gt;<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">scroll</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SmoothScroll</span>(<span style="color:#e6db74">&#39;a[href*=&#34;#&#34;]&#39;</span>, { <span style="color:#a6e22e">speed</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span> });&lt;/<span style="color:#f92672">script</span>&gt;
 </code></pre></div><ul>
 <li>可以通过修改<code>speed</code>调节滚动的速度，默认200。想了解更多，点击下方项目地址。</li>

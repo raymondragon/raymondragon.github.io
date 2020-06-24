@@ -143,11 +143,11 @@ if (!doNotTrack) {
 FileBrowser基于Go语言编写，简洁无依赖，作为一款文件浏览器，把服务端部署在服务器上，只要保持连接设备与服务器间网络链接通畅，随时随地就可以通过浏览器访问位于服务器上的存储位置。
 无需专门的应用就可以轻松执行复制、粘贴、移动、新建文件夹等文件管理的操作。此外，FileBrowser还具备文本编辑器、高级分享、文件传输、用户管理、命令行操作、自定义等多种功能，可谓远程文件管理中的瑞士军刀。
 那么这期教程就来聊聊Filebrowser的部署及应用。</p>
-<p>Previously I taught you how to build VPS on Google Cloud, but the pure SSH command line environment without graphical interface is not friendly to file management operations. So let's recommends Filebrowser to take over file management on VPS.
+<p>Previously I taught you how to build VPS on Google Cloud, but the pure SSH command line environment without graphical interface is not friendly to file management operations. So let&rsquo;s recommends Filebrowser to take over file management on VPS.
 FileBrowser is written in Go language, simple and non-dependent. As a file browser, the server is deployed on the VPS. As long as the network link between the connected device and the server is kept open, the storage on the server can be accessed through the browser anytime and anywhere.
 You can easily perform file management operations such as copy, paste, move, creating new folder, etc. without an app. In addition, FileBrowser also has a text editor, advanced sharing function, file transfer, user management, customization and many more.
-So let's get started with deployment and application of Filebrowser.</p>
-<h3 id="--list">目录 / LIST</h3>
+So let&rsquo;s get started with deployment and application of Filebrowser.</p>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">一键部署 | Deployment</a></li>
 <li><a href="#2">修改配置 | Configurations</a></li>
@@ -163,7 +163,7 @@ So let's get started with deployment and application of Filebrowser.</p>
   <img src="/img/A06/A0601.gif"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
-<h3 id="span-id1---deploymentspan"><!-- raw HTML omitted --># 一键部署 | Deployment<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-一键部署--deploymentspan"><span id="1"># 一键部署 | Deployment</span></h3>
 <ul>
 <li>VPS系统要求：Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
 <li>System requirement: Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
@@ -176,19 +176,17 @@ So let's get started with deployment and application of Filebrowser.</p>
 <li>获取root权限后，直接输入一键部署命令安装或卸载：</li>
 <li>Firstly root access, then enter the one-click deployment command to install or uninstall:</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bash &lt;<span style="color:#f92672">(</span>curl -s -L https://233blog.com/filebrowser.sh<span style="color:#f92672">)</span>
 </code></pre></div><blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a04_google_cloud/">
   <img src="/img/A04/A0400.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <hr>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<h3 id="span-id2---configurationsspan"><!-- raw HTML omitted --># 修改配置 | Configurations<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-修改配置--configurationsspan"><span id="2"># 修改配置 | Configurations</span></h3>
 <ul>
 <li>等待安装完成，会显示管理地址，默认用户名密码都为<code>admin</code>，登录修改语言及管理密码。</li>
 <li>Wait for the installation to complete, the management address will be displayed, and the default username and password are both <code>admin</code>.</li>
@@ -199,18 +197,18 @@ So let's get started with deployment and application of Filebrowser.</p>
 
 
 <hr>
-<h3 id="span-id3---service-managementspan"><!-- raw HTML omitted --># 服务管理 | Service management<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-服务管理--service-managementspan"><span id="3"># 服务管理 | Service management</span></h3>
 <ul>
 <li>在SSH命令行输入如下命令可以快速启动或停止Filebrowser服务。</li>
 <li>Enter the following command on the SSH command line to quickly start or stop the Filebrowser service.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">状态Status： systemctl status filebrowser
 启动Start：  systemctl start filebrowser
 停止Stop：   systemctl stop filebrowser
 重启Restart：systemctl restart filebrowser
 </code></pre></div><hr>
-<h3 id="span-id4---user-managementspan"><!-- raw HTML omitted --># 用户管理 | User management<!-- raw HTML omitted --></h3>
+<h3 id="span-id4-用户管理--user-managementspan"><span id="4"># 用户管理 | User management</span></h3>
 <ul>
 <li>在<code>全局设置</code>中可以自定义是否允许用户注册。</li>
 <li>In the <code>Global Settings</code> you can set whether to allow user registration.</li>
@@ -229,14 +227,14 @@ So let's get started with deployment and application of Filebrowser.</p>
 
 <ul>
 <li>也可在<code>用户管理</code>中对每个用户的权限及可访问的目录进行管理。</li>
-<li>Each user's permissions and accessible directories can also be managed in `User Management&rsquo;.</li>
+<li>Each user&rsquo;s permissions and accessible directories can also be managed in `User Management&rsquo;.</li>
 </ul>
 
   <img src="/img/A06/A0606.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
 <hr>
-<h3 id="span-id5---root-permissionspan"><!-- raw HTML omitted --># 获取根目录权限 | Root permission<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-获取根目录权限--root-permissionspan"><span id="5"># 获取根目录权限 | Root permission</span></h3>
 <ul>
 <li>默认情况下，文件管理被限制在<code>/etc/filebrowser</code>目录下，可以修改其中的配置文件<code>filebrowser.json</code>来实现全盘管理。</li>
 <li>By default, file management is restricted to the <code>/etc/filebrowser</code> directory. You may modify the configuration file <code>filebrowser.json</code> to get root access.</li>
@@ -254,7 +252,7 @@ So let's get started with deployment and application of Filebrowser.</p>
 
 
 <hr>
-<h3 id="span-id6---customizationspan"><!-- raw HTML omitted --># 个性化定制 | Customization<!-- raw HTML omitted --></h3>
+<h3 id="span-id6-个性化定制--customizationspan"><span id="6"># 个性化定制 | Customization</span></h3>
 <ul>
 <li>在<code>全局设置</code>中可以进行个性化定制设置，其中可以填写的包括名称和路径。修改名称可以修改显示在登录界面上的名称，而路径则包含自定义图标和css文件。</li>
 <li>Personalization settings can be made in <code>Global Settings</code>, where you can fill in the name and path. Modifying the name modifies the name that appears on the login screen, while the path contains custom icons and css files.</li>
@@ -275,7 +273,7 @@ So let's get started with deployment and application of Filebrowser.</p>
 <li>在此分享一下博主找到的深色主题，写入<code>custom.css</code>后，重启Filebrowser服务后生效。</li>
 <li>Let me show you the dark theme I found. After writing into <code>custom.css</code>, it will take effect after restarting the Filebrowser service.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">body</span><span style="color:#f92672">,</span> #login {
   <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#303030</span>;
 }
@@ -314,7 +312,7 @@ So let's get started with deployment and application of Filebrowser.</p>
 <span style="color:#f92672">input</span><span style="color:#f92672">,</span>
 .<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">textarea</span><span style="color:#f92672">,</span>
 .<span style="color:#a6e22e">dashboard</span> #locale<span style="color:#f92672">,</span>
-.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">],</span>
 .<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span> {
   <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#212121</span>;
   <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.9</span>);
@@ -322,8 +320,8 @@ So let's get started with deployment and application of Filebrowser.</p>
 }
 
 <span style="color:#f92672">select</span><span style="color:#f92672">,</span>
-.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span>
-.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">],</span>
+.<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">],</span>
 .<span style="color:#a6e22e">dashboard</span> <span style="color:#f92672">select</span> {
   <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>;
 }
@@ -336,7 +334,7 @@ So let's get started with deployment and application of Filebrowser.</p>
 #search.<span style="color:#a6e22e">active</span> #input<span style="color:#f92672">&gt;</span>.<span style="color:#a6e22e">action</span> <span style="color:#f92672">i</span><span style="color:#f92672">,</span>
 #search.<span style="color:#a6e22e">active</span> <span style="color:#f92672">input</span><span style="color:#f92672">,</span>
 #search.<span style="color:#a6e22e">active</span> #input<span style="color:#f92672">,</span>
-#login <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">]</span><span style="color:#f92672">,</span> #login <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span> {
+#login <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">password</span><span style="color:#f92672">],</span> #login <span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#f92672">text</span><span style="color:#f92672">]</span> {
   <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#303030</span>;
   <span style="color:#66d9ef">color</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.7</span>);
 }
@@ -372,13 +370,13 @@ So let's get started with deployment and application of Filebrowser.</p>
     <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#303030</span>;
 }
 </code></pre></div><hr>
-<h3 id="span-id7---domain-configurationspan"><!-- raw HTML omitted --># 域名配置 | Domain configuration<!-- raw HTML omitted --></h3>
+<h3 id="span-id7-域名配置--domain-configurationspan"><span id="7"># 域名配置 | Domain configuration</span></h3>
 <ul>
 <li>如果你有域名，可以通过Caddy等服务器程序代理Filebrowser的管理页面，直接访问域名即可访问Filebrowser。</li>
 <li>If you have a domain name, you can access Filebrowser by directly accessing the domain name using <code>proxy</code> of Caddy, etc.</li>
 </ul>
 <blockquote>
-<p><a href="https://dl.marsgrid.com">https://dl.marsgrid.com</a></p>
+<p><a href="https://io.marsgrid.com">https://io.marsgrid.com</a></p>
 </blockquote>
 <ul>
 <li>这是本站Filebrowser网盘页面，也可从主页菜单中找到，博主将不定时上传资源，欢迎注册下载。</li>
@@ -386,10 +384,10 @@ So let's get started with deployment and application of Filebrowser.</p>
 </ul>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a08_caddy/">
   <img src="/img/A08/A0800.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 
       <div>&nbsp;</div>
