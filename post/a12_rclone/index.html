@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>nPlayer可以直接添加谷歌网盘在线串流播放，但是需要科学上网，本教程通过rclone将Google drive挂载在谷歌云服务器，然后用Caddy的browse插件发布成文件列表，然后就可用nPlayer自带浏览器实现免科学上网在线播放。</p>
 <p>You can add google drive directly into nplayer, which is sometime inconvenient. So the alternative plan is to use browser inside nplayer to stream, while webpages come from Caddy and rclone.</p>
-<h3 id="--list">目录 / LIST</h3>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">安装Rclone | Install Rclone</a></li>
 <li><a href="#2">配置Rclone | Rclone config</a></li>
@@ -152,36 +152,36 @@ if (!doNotTrack) {
 </ul>
 </blockquote>
 <hr>
-<h3 id="span-id1-rclone--install-rclonespan"><!-- raw HTML omitted --># 安装Rclone | Install Rclone<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-安装rclone--install-rclonespan"><span id="1"># 安装Rclone | Install Rclone</span></h3>
 <ul>
 <li>首先直接输入官方安装命令一键安装Rclone：</li>
 <li>To install rclone on Linux/macOS/BSD systems, run:</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://rclone.org/install.sh | sudo bash
 </code></pre></div><ul>
 <li>另外还需要安装fuse用来挂载目录，否者会提示<code>executable file not found</code>。</li>
 <li>In order to avoid error <code>executable file not found</code>, install fuse btw.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Debian/Ubuntu</span>
 apt-get install fuse
 <span style="color:#75715e"># CentOS</span>
 yum install fuse
 </code></pre></div><blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a04_google_cloud/">
   <img src="/img/A04/A0400.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <hr>
-<h3 id="span-id2-rclone--rclone-configspan"><!-- raw HTML omitted --># 配置Rclone | Rclone config<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-配置rclone--rclone-configspan"><span id="2"># 配置Rclone | Rclone config</span></h3>
 <ul>
 <li>输入<code>rclone config</code>开始初始化配置。</li>
 <li>Type <code>rclone config</code> to initiate rclone configeration.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">n<span style="color:#f92672">)</span> New remote
 s<span style="color:#f92672">)</span> Set configuration password
 q<span style="color:#f92672">)</span> Quit config
@@ -260,7 +260,7 @@ y/e/d&gt; y  <span style="color:#75715e">#输入y | choose y</span>
 Current remotes:
 
 Name                 Type
-<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>                 <span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+<span style="color:#f92672">====</span>                 <span style="color:#f92672">====</span>
 gdrive               drive
 
 e<span style="color:#f92672">)</span> Edit existing remote
@@ -272,29 +272,29 @@ s<span style="color:#f92672">)</span> Set configuration password
 q<span style="color:#f92672">)</span> Quit config
 e/n/d/r/c/s/q&gt; q  <span style="color:#75715e">#输入q保存退出 | choose q to exit</span>
 </code></pre></div><hr>
-<h3 id="span-id3-gdrive--mount-gdrivespan"><!-- raw HTML omitted --># 挂载Gdrive | Mount Gdrive<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-挂载gdrive--mount-gdrivespan"><span id="3"># 挂载Gdrive | Mount Gdrive</span></h3>
 <ul>
 <li>首先登陆Filebrowser，选择一个挂载点，新建一个空目录例如<code>home/gdrive</code>.</li>
 <li>Login filebrowser firstly, make an empty folder to mount, eg. <code>home/gdrive</code>.</li>
 </ul>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a06_filebrowser/">
   <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <ul>
 <li>输入如下指令将<code>gdrive</code>挂载到本地目录<code>home/gdrive</code>.</li>
 <li>Type in the following command to mount <code>gdrive</code> to the local folder <code>home/gdrive</code>.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone mount gdrive: /home/gdrive --daemon
 </code></pre></div><ul>
 <li>挂载完毕后即可在后台运行，输入<code>df -h</code>检查一下，注意最底下显示<code>gdrive</code>表示挂载成功。</li>
 <li>After the mount is complete, you can run it in the background. Enter <code>df -h</code> to check it. Note that <code>gdrive</code> is displayed at the bottom to indicate that mount is successful.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@prime-2:~# df -h
 Filesystem      Size  Used Avail Use% Mounted on
 udev            281M     <span style="color:#ae81ff">0</span>  281M   0% /dev
@@ -305,17 +305,17 @@ tmpfs           5.0M     <span style="color:#ae81ff">0</span>  5.0M   0% /run/lo
 tmpfs           293M     <span style="color:#ae81ff">0</span>  293M   0% /sys/fs/cgroup
 gdrive          1.0P  1.4T  1.0P   1% /home/gdrive
 </code></pre></div><hr>
-<h3 id="span-id4-caddy--caddy-configspan"><!-- raw HTML omitted --># 配置Caddy | Caddy config<!-- raw HTML omitted --></h3>
+<h3 id="span-id4-配置caddy--caddy-configspan"><span id="4"># 配置Caddy | Caddy config</span></h3>
 <ul>
 <li>接下来修改caddyfile配置文件，把刚才挂载的目录发布成网页。</li>
 <li>Next, modify the caddyfile and publish the directory you just mounted as a web page.</li>
 </ul>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a08_caddy/">
   <img src="/img/A08/A0800.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <ul>
 <li>需要用到<code>browse</code>指令。</li>
@@ -339,7 +339,7 @@ gdrive          1.0P  1.4T  1.0P   1% /home/gdrive
 <li>在Caddyfile中添加如下配置，域名或端口均可。</li>
 <li>Add the following config in caddyfile, using domain name or port.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://drive.marsgrid.com <span style="color:#f92672">{</span>
  root /home/gdrive
  browse
@@ -353,25 +353,25 @@ gdrive          1.0P  1.4T  1.0P   1% /home/gdrive
 <span style="color:#f92672">}</span>
 </code></pre></div><ul>
 <li>注意不要<code>gzip</code>压缩，不要<code>tls</code>加密，在线看视频不需要这些影响速度，同时引起发热的步骤，简单点挺好。</li>
-<li>Be careful not use <code>gzip</code> to compress, and don't use <code>tls</code> to encrypt in order to make it simlple while streaming.</li>
+<li>Be careful not use <code>gzip</code> to compress, and don&rsquo;t use <code>tls</code> to encrypt in order to make it simlple while streaming.</li>
 </ul>
 <hr>
-<h3 id="span-id5---stream-onlinespan"><!-- raw HTML omitted --># 在线播放 | Stream online<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-在线播放--stream-onlinespan"><span id="5"># 在线播放 | Stream online</span></h3>
 <ul>
 <li>打开nPlayer内置的浏览器输入刚才配置的域名或者IP+端口号即可完成在线播放。</li>
-<li>Open nPlayer's built-in browser and enter the domain name or IP+ port number you just configured to complete streaming.</li>
+<li>Open nPlayer&rsquo;s built-in browser and enter the domain name or IP+ port number you just configured to complete streaming.</li>
 </ul>
 
   <img src="/img/A12/A1201.png"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
 <hr>
-<h3 id="span-id6---user-guidespan"><!-- raw HTML omitted --># 参考指南 | User Guide<!-- raw HTML omitted --></h3>
+<h3 id="span-id6-参考指南--user-guidespan"><span id="6"># 参考指南 | User Guide</span></h3>
 <ul>
 <li>Rclone常用命令参考。</li>
 <li>Useful rclone commands.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rclone config - 以控制会话的形式添加rclone的配置，配置保存在.rclone.conf文件中。
 rclone copy - 将文件从源复制到目的地址，跳过已复制完成的。
 rclone sync - 将源数据同步到目的地址，只更新目的地址的数据。

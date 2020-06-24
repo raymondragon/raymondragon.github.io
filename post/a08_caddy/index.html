@@ -143,7 +143,7 @@ if (!doNotTrack) {
 这期教程主要从Caddy的安装、配置、启动入门，然后参考本站配置文件，逐一解析Caddy的使用方法。</p>
 <p>Caddy is said to be the easiest to use server side, it is very convenient to deploy our website or network disk, and Caddy is a web server that provides HTTPS features by default without additional configuration.
 This tutorial describes mainly from the installation, configuration, startup of Caddy, and then refer to the site configuration file to analyze the use of Caddy.</p>
-<h3 id="--list">目录 / LIST</h3>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">安装卸载 | Deployment</a></li>
 <li><a href="#2">使用说明 | Instructions</a></li>
@@ -160,12 +160,12 @@ This tutorial describes mainly from the installation, configuration, startup of 
 </ul>
 </blockquote>
 <hr>
-<h3 id="span-id1---deploymentspan"><!-- raw HTML omitted --># 安装卸载 | Deployment<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-安装卸载--deploymentspan"><span id="1"># 安装卸载 | Deployment</span></h3>
 <ul>
 <li>VPS系统要求：Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
 <li>System requirement: Ubuntu 16+ / Debian 8+ / CentOS 7+</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 安装 Install</span>
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh <span style="color:#f92672">&amp;&amp;</span> chmod +x caddy_install.sh <span style="color:#f92672">&amp;&amp;</span> bash caddy_install.sh
 <span style="color:#75715e"># 安装插件 Install plugin</span>
@@ -181,7 +181,7 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/dou
 
 
 <hr>
-<h3 id="span-id2---instructionsspan"><!-- raw HTML omitted --># 使用说明 | Instructions<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-使用说明--instructionsspan"><span id="2"># 使用说明 | Instructions</span></h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">启动Start：/etc/init.d/caddy start
 停止Stop：/etc/init.d/caddy stop
 重启Restart：/etc/init.d/caddy restart
@@ -191,17 +191,17 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/dou
 配置文件位置Caddyfile：/usr/local/caddy/Caddyfile
 证书位置SSL Dir：/.caddy/acme/acme-v01.api.letsencrypt.org/sites/xxx.xxx<span style="color:#f92672">(</span>域名<span style="color:#f92672">)</span>/
 </code></pre></div><hr>
-<h3 id="span-id3---configuration-filespan"><!-- raw HTML omitted --># 修改配置 | Configuration File<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-修改配置--configuration-filespan"><span id="3"># 修改配置 | Configuration File</span></h3>
 <ul>
 <li>Caddy的配置文件名叫Caddyfile，我们直接用Filebrowser在线打开这个<code>/usr/local/caddy/Caddyfile</code>，编辑文件即可。配置文件修改完成后需要重启Caddy生效。</li>
-<li>Caddy's configuration file name is Caddyfile. We can open this <code>/usr/local/caddy/Caddyfile</code> directly with Filebrowser and edit the file. After the configuration file is modified, you need to restart Caddy to take effect.</li>
+<li>Caddy&rsquo;s configuration file name is Caddyfile. We can open this <code>/usr/local/caddy/Caddyfile</code> directly with Filebrowser and edit the file. After the configuration file is modified, you need to restart Caddy to take effect.</li>
 </ul>
 
   <img src="/img/A08/A0802.jpg"  alt="x"  class="center"  style="border-radius: 8px;"  />
 
 
 <hr>
-<h3 id="span-id4-caddy--launch-caddyspan"><!-- raw HTML omitted --># 启动Caddy | Launch Caddy<!-- raw HTML omitted --></h3>
+<h3 id="span-id4-启动caddy--launch-caddyspan"><span id="4"># 启动Caddy | Launch Caddy</span></h3>
 <ul>
 <li>在SSH中直接输入<code>/etc/init.d/caddy start</code>即可启动Caddy。</li>
 <li>Start Caddy by typing <code>/etc/init.d/caddy start</code> directly in SSH.</li>
@@ -215,12 +215,12 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/dou
 <li>If the start goes wrong, you can check the log for error <code>tail -f /tmp/caddy.log</code>.</li>
 </ul>
 <hr>
-<h3 id="span-id5---caddyfile-examplespan"><!-- raw HTML omitted --># 多站配置解析 | Caddyfile example<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-多站配置解析--caddyfile-examplespan"><span id="5"># 多站配置解析 | Caddyfile example</span></h3>
 <ul>
 <li>Caddy可以添加多站点配置，以本站的Caddyfile为例：</li>
 <li>Caddy can add a multi-site configuration, taking the Caddyfile of this site as an example:</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">https:<span style="color:#75715e">//marsgrid.com {
 </span><span style="color:#75715e"></span> gzip
  root <span style="color:#f92672">/</span>home<span style="color:#f92672">/</span>marsgrid<span style="color:#f92672">/</span><span style="color:#66d9ef">public</span>
@@ -244,7 +244,7 @@ https:<span style="color:#75715e">//search.marsgrid.com {
 </span><span style="color:#75715e"></span> basicauth <span style="color:#f92672">/</span> admin admin
 <span style="color:#f92672">}</span>
 </code></pre></div><hr>
-<h3 id="span-id5-1---blog-configspan"><!-- raw HTML omitted -->## 博客配置 | Blog Config<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-1-博客配置--blog-configspan"><span id="5-1">## 博客配置 | Blog Config</span></h3>
 <table>
 <thead>
 <tr>
@@ -273,13 +273,13 @@ https:<span style="color:#75715e">//search.marsgrid.com {
 </table>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a07_hugo/">
   <img src="/img/A07/A0700.jpg"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <hr>
-<h3 id="span-id5-2---redirectionspan"><!-- raw HTML omitted -->## 设置跳转 | Redirection<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-2-设置跳转--redirectionspan"><span id="5-2">## 设置跳转 | Redirection</span></h3>
 <table>
 <thead>
 <tr>
@@ -295,7 +295,7 @@ https:<span style="color:#75715e">//search.marsgrid.com {
 </tbody>
 </table>
 <hr>
-<h3 id="span-id5-3---proxy-sitesspan"><!-- raw HTML omitted -->## 反代站点 | Proxy sites<!-- raw HTML omitted --></h3>
+<h3 id="span-id5-3-反代站点--proxy-sitesspan"><span id="5-3">## 反代站点 | Proxy sites</span></h3>
 <table>
 <thead>
 <tr>
@@ -316,10 +316,10 @@ https:<span style="color:#75715e">//search.marsgrid.com {
 </ul>
 <blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a06_filebrowser/">
   <img src="/img/A06/A0600.png"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 <ul>
 <li>还可以设置其他地址的反向代理，比如反代一下谷歌？打造自己的镜像站。</li>
@@ -344,7 +344,7 @@ https:<span style="color:#75715e">//search.marsgrid.com {
 <li>At the same time, you can set the password to login your mirror sites. Simply go to <code>搜索|Search</code> on the top to login.</li>
 </ul>
 <hr>
-<h3 id="span-id6---user-guidespan"><!-- raw HTML omitted --># 参考指南 | User Guide<!-- raw HTML omitted --></h3>
+<h3 id="span-id6-参考指南--user-guidespan"><span id="6"># 参考指南 | User Guide</span></h3>
 <ul>
 <li>如果你想了解更多Caddy的使用方法，可以访问下方的官方指南。</li>
 <li>If you want to learn more about how to use Caddy, you can visit the official guide below.</li>

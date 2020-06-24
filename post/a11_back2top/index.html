@@ -141,7 +141,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>上一期教程介绍了神器Smooth-scroll，这期我们继续深入研究，为网站加入一键返回顶部按钮。</p>
 <p>The previous tutorial introduced the artifact Smooth-scroll. In this issue, we continue to delve into the process of adding a back-to-top button in your site.</p>
-<h3 id="--list">目录 / LIST</h3>
+<h3 id="目录--list">目录 / LIST</h3>
 <ul>
 <li><a href="#1">修改style.css | Modify style.css</a></li>
 <li><a href="#2">下载SVG | Download SVG</a></li>
@@ -150,12 +150,12 @@ if (!doNotTrack) {
 </ul>
 </blockquote>
 <hr>
-<h3 id="span-id1-stylecss--modify-stylecssspan"><!-- raw HTML omitted --># 修改style.css | Modify style.css<!-- raw HTML omitted --></h3>
+<h3 id="span-id1-修改stylecss--modify-stylecssspan"><span id="1"># 修改style.css | Modify style.css</span></h3>
 <ul>
 <li>首先用在CSS中定义返回顶部按钮的位置和样式等信息，只需要在Hugo主题目录下<code>static/assets</code>的<code>style.css</code>文件中直接加入如下代码即可。</li>
 <li>Firstly we should custom the back-to-top button a single line of code directly to the <code>style.css</code> file in the <code>static/assets</code> directory of the Hugo theme.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">backtop</span> {
     <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#b3b1b1</span>;
     <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
@@ -166,7 +166,7 @@ if (!doNotTrack) {
     <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">999998</span>;
 }
 </code></pre></div><hr>
-<h3 id="span-id2-svg--download-svgspan"><!-- raw HTML omitted --># 下载SVG | Download SVG<!-- raw HTML omitted --></h3>
+<h3 id="span-id2-下载svg--download-svgspan"><span id="2"># 下载SVG | Download SVG</span></h3>
 <ul>
 <li>推荐在<code>Font Awesome</code>这个网站现在SVG图标，点击下方链接，选择你喜欢的箭头图标，或者用其他任何图标都可以，然后点击屏幕中间的<code>Download SVG</code>按钮下载SVG文件。</li>
 <li>Recommend the SVG icon on the website of <code>Font Awesome</code>, click on the link below, select the arrow icon you like, or use any other icon, then click the <code>Download SVG</code> button in the middle of the screen to download the SVG file.</li>
@@ -178,33 +178,33 @@ if (!doNotTrack) {
 <li>可以使用记事本打开刚才下载的SVG文件，可以看到<code>&lt;svg&gt;</code>信息，全选拷贝到Hugo主题目录下<code>layouts/partials</code>中新建的<code>arrow.html</code>文件中。</li>
 <li>You can use Notepad to open the SVG file you just downloaded, you can see the <code>&lt;svg&gt;</code> information, and copy it all to the new <code>arrow.html</code> file in <code>layouts/partials</code> under the Hugo theme directory.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">svg</span> <span style="color:#a6e22e">aria-hidden</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">focusable</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">data-prefix</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fas&#34;</span> <span style="color:#a6e22e">data-icon</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chevron-circle-up&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;svg-inline--fa fa-chevron-circle-up fa-w-16&#34;</span> <span style="color:#a6e22e">role</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;img&#34;</span> <span style="color:#a6e22e">xmlns</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#a6e22e">viewBox</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0 0 512 512&#34;</span>&gt;
     &lt;<span style="color:#f92672">path</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;currentColor&#34;</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z&#34;</span>&gt;
     &lt;/<span style="color:#f92672">path</span>&gt;
 &lt;/<span style="color:#f92672">svg</span>&gt;
 </code></pre></div><hr>
-<h3 id="span-id3---adding-anchorspan"><!-- raw HTML omitted --># 添加锚点 | Adding anchor<!-- raw HTML omitted --></h3>
+<h3 id="span-id3-添加锚点--adding-anchorspan"><span id="3"># 添加锚点 | Adding anchor</span></h3>
 <ul>
 <li>打开Hugo主题目录下<code>layouts/partials</code>中的<code>head.html</code>文件，在任意行添加如下代码，添加锚点。</li>
 <li>Open the <code>head.html</code> file in <code>layouts/partials</code> under the Hugo theme directory, add the following code to any line, and add an anchor point.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;top&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
 </code></pre></div><hr>
-<h3 id="span-id4---back-to-topspan"><!-- raw HTML omitted --># 一键返回顶部 | Back to top<!-- raw HTML omitted --></h3>
+<h3 id="span-id4-一键返回顶部--back-to-topspan"><span id="4"># 一键返回顶部 | Back to top</span></h3>
 <ul>
 <li>回到Hugo主题文件夹下的<code>layoust/_default</code>文件夹下的<code>single.html</code>文件，把下面的代码拷进到<code>{{ define &quot;main&quot; }}</code>之后。再去SSH里Hugo一下就搞定啦。</li>
 <li>Go back to the <code>single.html</code> file in the <code>layoust/_default</code> folder under the Hugo theme folder and copy the following code after <code>{{ define &quot;main&quot; }}</code>.</li>
 </ul>
-<!-- raw HTML omitted -->
+<div></div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#top&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;backtop&#34;</span>&gt;{{ partial &#34;arrow.html&#34; . }}&lt;/<span style="color:#f92672">a</span>&gt;
 </code></pre></div><blockquote>
 <p>你可能会感兴趣 | Maybe interested in</p>
-<p><!-- raw HTML omitted -->
+<p><a href="/post/a10_smoothscrool/">
   <img src="/img/A10/A1000.gif"  alt="x"  class="center"  style="border-radius: 8px; width: 80%;"  />
 
-<!-- raw HTML omitted --></p>
+</a></p>
 </blockquote>
 
       <div>&nbsp;</div>
